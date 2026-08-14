@@ -776,3 +776,225 @@ footer {
 @media (max-width: 480px) {
   .products-grid { grid-template-columns: 1fr; }
 }
+
+/* =============================================
+   TESTIMONIALS SECTION
+   ============================================= */
+.testimonials-section {
+  padding: 5rem 0;
+  background: var(--gray-50);
+  position: relative;
+  overflow: hidden;
+}
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(26,86,219,.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.testimonials-section::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(16,185,129,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Carousel wrapper — hides overflow for sliding */
+.testi-carousel {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  position: relative;
+  margin-bottom: 2rem;
+}
+.testi-track {
+  display: flex;
+  transition: transform .5s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+}
+
+/* Individual card */
+.testi-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--transition);
+}
+.testi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+}
+
+/* Quote icon */
+.testi-quote-icon {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; color: white;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 12px rgba(26,86,219,.25);
+}
+
+/* Stars */
+.testi-stars {
+  display: flex;
+  gap: .2rem;
+  margin-bottom: 1.25rem;
+}
+.testi-stars i {
+  color: #f59e0b;
+  font-size: 1rem;
+}
+
+/* Review text */
+.testi-text {
+  font-size: 1.02rem;
+  color: var(--gray-600);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+/* Author */
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-100);
+}
+.testi-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  color: white;
+  font-size: .9rem;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(26,86,219,.25);
+  letter-spacing: .5px;
+}
+.testi-avatar--green  { background: linear-gradient(135deg, var(--green), var(--green-dark)); box-shadow: 0 4px 12px rgba(16,185,129,.3); }
+.testi-avatar--amber  { background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 4px 12px rgba(245,158,11,.3); }
+.testi-avatar--indigo { background: linear-gradient(135deg, #7c3aed, #4f46e5); box-shadow: 0 4px 12px rgba(124,58,237,.3); }
+
+.testi-author-info { display: flex; flex-direction: column; gap: .15rem; }
+.testi-name { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; color: var(--blue-dark); }
+.testi-role { font-size: .78rem; color: var(--gray-400); font-weight: 500; }
+
+/* Controls */
+.testi-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.testi-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  color: var(--gray-600);
+  font-size: .95rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.testi-btn:hover {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(26,86,219,.3);
+}
+.testi-btn:active { transform: scale(.96); }
+
+.testi-dots { display: flex; gap: .55rem; align-items: center; }
+.testi-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gray-200);
+  border: none;
+  cursor: pointer;
+  transition: width var(--transition), background var(--transition), border-radius var(--transition);
+}
+.testi-dot.active {
+  width: 28px;
+  border-radius: 4px;
+  background: var(--blue);
+}
+.testi-dot:hover:not(.active) { background: var(--gray-400); }
+
+/* Responsive: show 2 cards side-by-side on wider screens */
+@media (min-width: 900px) {
+  .testi-card {
+    flex: 0 0 calc(50% - .75rem);
+  }
+  .testi-track {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .testi-card { padding: 1.75rem 1.5rem; }
+  .testi-text { font-size: .93rem; }
+}
+
+/* =============================================
+   GLOBAL POLISH – Hover Enhancements
+   ============================================= */
+
+/* Trust cards – lift + coloured bottom bar */
+.trust-card {
+  position: relative;
+  overflow: hidden;
+}
+.trust-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+.trust-card:hover::after { transform: scaleX(1); }
+.trust-card:hover .trust-icon { transform: scale(1.12) rotate(-4deg); }
+.trust-icon { transition: transform var(--transition); }
+
+/* Category cards – smooth arrow slide */
+.category-link i { transition: transform var(--transition); }
+.category-card:hover .category-link i { transform: translateX(5px); }
+
+/* Product cards – enhanced btn-details arrow */
+.btn-details i { transition: transform var(--transition), gap var(--transition); }
+.btn-details:hover i { transform: translateX(4px); }
+
+/* Footer social links pulse on hover */
+.social-links a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+/* Smooth focus rings for all interactive elements */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

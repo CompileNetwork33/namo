@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Tips – Namo Medical Store | Expert Pharmacy Advice</title>
+  <meta name="description" content="Free health tips and pharmacy advice from the experts at Namo Medical Store. Learn about medicines, nutrition, seasonal health, chronic conditions, and more." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/health-tips.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span><i class="fas fa-clock"></i> Mon–Sat: 8:00 AM – 10:00 PM &nbsp;|&nbsp; Sun: 9:00 AM – 6:00 PM</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+919501743529"><i class="fas fa-phone"></i> +91 95017 43529</a>
+        <a href="mailto:info@namomedical.com"><i class="fas fa-envelope"></i> info@namomedical.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header id="main-header">
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fas fa-plus-square"></i></div>
+          <div class="logo-text">
+            <div class="name">Namo Medical</div>
+            <div class="tagline">Your Health, Our Priority</div>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="wholesale.html">Wholesale</a></li>
+          <li><a href="prescription.html">Prescription</a></li>
+          <li><a href="health-tips.html" class="active">Health Tips</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="tel:+919501743529" class="btn-call">
+            <i class="fas fa-phone-alt"></i> Call Now
+          </a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE NAV ===== -->
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" id="mobile-close"><i class="fas fa-times"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="wholesale.html">Wholesale</a>
+    <a href="prescription.html">Prescription Upload</a>
+    <a href="health-tips.html">Health Tips</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:+919501743529" class="btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+  </div>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="badge-pill"><i class="fas fa-heartbeat"></i> &nbsp;Expert Pharmacy Advice</span>
+        <h1>Health Tips & Wellness Guides</h1>
+        <p>Trusted guidance from our licensed pharmacists — for a healthier, happier you.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Health Tips</span>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEARCH + FILTER BAR ===== -->
+  <section class="ht-filter-bar">
+    <div class="container">
+      <div class="ht-filter-inner">
+
+        <!-- Search -->
+        <div class="ht-search-wrap">
+          <i class="fas fa-search"></i>
+          <input
+            type="search"
+            id="ht-search"
+            placeholder="Search health tips…"
+            aria-label="Search health tips"
+          />
+        </div>
+
+        <!-- Category filters -->
+        <div class="ht-cats" id="ht-cats" role="tablist" aria-label="Filter by category">
+          <button class="ht-cat-btn active" data-cat="all" role="tab" aria-selected="true">All Topics</button>
+          <button class="ht-cat-btn" data-cat="medicine"    role="tab" aria-selected="false"><i class="fas fa-pills"></i> Medicines</button>
+          <button class="ht-cat-btn" data-cat="nutrition"   role="tab" aria-selected="false"><i class="fas fa-apple-alt"></i> Nutrition</button>
+          <button class="ht-cat-btn" data-cat="seasonal"    role="tab" aria-selected="false"><i class="fas fa-cloud-sun"></i> Seasonal</button>
+          <button class="ht-cat-btn" data-cat="chronic"     role="tab" aria-selected="false"><i class="fas fa-heartbeat"></i> Chronic Care</button>
+          <button class="ht-cat-btn" data-cat="baby"        role="tab" aria-selected="false"><i class="fas fa-baby"></i> Baby &amp; Child</button>
+          <button class="ht-cat-btn" data-cat="wellness"    role="tab" aria-selected="false"><i class="fas fa-spa"></i> Wellness</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED TIP ===== -->
+  <section class="ht-featured-section">
+    <div class="container">
+      <div class="ht-featured-card reveal" id="ht-featured">
+        <div class="ht-featured-badge">
+          <i class="fas fa-star"></i> Featured Tip
+        </div>
+        <div class="ht-featured-body">
+          <div class="ht-featured-meta">
+            <span class="ht-tag ht-tag--medicine"><i class="fas fa-pills"></i> Medicines</span>
+            <span class="ht-read-time"><i class="fas fa-clock"></i> 3 min read</span>
+          </div>
+          <h2>Never Skip a Dose — But Know When to Skip Safely</h2>
+          <p>Missing a dose of medication can disrupt your treatment. However, if you miss a dose, what you should do depends entirely on the medicine and how much time has passed. Never double-dose without consulting your pharmacist — some medicines like blood thinners can be dangerous if doubled, while others are safe to take as soon as you remember. Always keep your medicines at the same time each day using an alarm or a pill organiser.</p>
+          <div class="ht-featured-footer">
+            <div class="ht-author-chip">
+              <div class="ht-author-avatar"><i class="fas fa-user-md"></i></div>
+              <div>
+                <span class="ht-author-name">Namo Medical Pharmacist</span>
+                <span class="ht-author-date">August 2026</span>
+              </div>
+            </div>
+            <a href="contact.html" class="ht-ask-btn">
+              <i class="fas fa-comment-medical"></i> Ask Our Pharmacist
+            </a>
+          </div>
+        </div>
+        <div class="ht-featured-visual" aria-hidden="true">
+          <div class="ht-featured-icon-bg">
+            <i class="fas fa-capsules"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TIPS GRID ===== -->
+  <section class="ht-grid-section">
+    <div class="container">
+
+      <div class="ht-grid" id="ht-grid">
+
+        <!-- Card 1 -->
+        <article class="ht-card reveal" data-cat="nutrition" data-title="5 Foods That Naturally Boost Your Immunity">
+          <div class="ht-card-media ht-media--green">
+            <i class="fas fa-apple-alt"></i>
+            <span class="ht-card-tag">Nutrition</span>
+          </div>
+          <div class="ht-card-body">
+            <div class="ht-card-meta">
+              <span class="ht-read-time"><i class="fas fa-clock"></i> 4 min read</span>
+            </div>
+            <h3>5 Foods That Naturally Boost Your Immunity</h3>
+            <p>Citrus fruits, garlic, ginger, turmeric, and yoghurt are scientifically proven to strengthen your immune system. Add at least two of these to your daily diet for visible results within weeks.</p>
+            <div class="ht-card-footer">
+              <span class="ht-tag ht-tag--green"><i class="fas fa-apple-alt"></i> Nutrition</span>
+              <button class="ht-read-more" aria-label="Read more about immunity foods">Read More <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="ht-card reveal" data-cat="medicine" data-title="How to Store Medicines Correctly at Home">
+          <div class="ht-card-media ht-media--blue">
+            <i class="fas fa-pills"></i>
+            <span class="ht-card-tag">Medicines</span>
+          </div>
+          <div class="ht-card-body">
+            <div class="ht-card-meta">
+              <span class="ht-read-time"><i class="fas fa-clock"></i> 3 min read</span>
+            </div>
+            <h3>How to Store Medicines Correctly at Home</h3>
+            <p>Heat, light, and moisture can degrade medicines. Keep them in a cool, dry place — not the bathroom. Always check expiry dates, store insulin in the refrigerator, and keep medicines out of children's reach.</p>
+            <div class="ht-card-footer">
+              <span class="ht-tag ht-tag--blue"><i class="fas fa-pills"></i> Medicines</span>
+              <button class="ht-read-more" aria-label="Read more about medicine storage">Read More <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="ht-card reveal" data-cat="seasonal" data-title="Monsoon Health Guide: Staying Safe This Season">
+          <div class="ht-card-media ht-media--amber">
+            <i class="fas fa-cloud-rain"></i>
+            <span class="ht-card-tag">Seasonal</span>
+          </div>
+          <div class="ht-card-body">
+            <div class="ht-card-meta">
+              <span class="ht-read-time"><i class="fas fa-clock"></i> 5 min read</span>
+            </div>
+            <h3>Monsoon Health Guide: Staying Safe This Season</h3>
+            <p>Monsoon brings an increased risk of dengue, malaria, cholera, and fungal infections. Use mosquito repellents, drink boiled or filtered water, avoid street food, and keep ORS sachets at home.</p>
+            <div class="ht-card-footer">
+              <span class="ht-tag ht-tag--amber"><i class="fas fa-cloud-sun"></i> Seasonal</span>
+              <button class="ht-read-more" aria-label="Read more about monsoon health">Read More <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="ht-card reveal" data-cat="chronic" data-title="Managing Diabetes Daily: Tips From Your Pharmacist">
+          <div class="ht-card-media ht-media--red">
+            <i class="fas fa-heartbeat"></i>
+            <span class="ht-card-tag">Chronic Care</span>
+          </div>
+          <div class="ht-card-body">
+            <div class="ht-card-meta">
+              <span class="ht-read-time"><i class="fas fa-clock"></i> 6 min read</span>
+            </div>
+            <h3>Managing Diabetes Daily: Tips From Your Pharmacist</h3>
+            <p>Monitor your blood sugar at consistent times, carry glucose tablets for emergencies, rotate insulin injection sites, and never skip meals when on insulin. A glucometer calibration check every 6 months is essential.</p>
+            <div class="ht-card-footer">
+              <span class="ht-tag ht-tag--red"><i class="fas fa-heartbeat"></i> Chronic Care</span>
+              <button class="ht-read-more" aria-label="Read more about diabetes management">Read More <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="ht-card reveal" data-cat="baby" data-title="Fever in Children: When to Worry and What to Do">
+          <div class="ht-card-media ht-media--indigo">
+            <i class="fas fa-baby"></i>
+            <span class="ht-card-tag">Baby &amp; Child</span>
+          </div>
+          <div class="ht-card-body">
+            <div class="ht-card-meta">
+              <span class="ht-read-time"><i class="fas fa-clock"></i> 4 min read</span>
+            </div>
+            <h3>Fever in Children: When to Worry and What to Do</h3>
+            <p>A fever above 38°C in infants under 3 months needs immediate medical attention. For older children, paracetamol syrup every 4–6 hours (correct dosage by weight), plenty of fluids, and sponging with lukewarm water can help.</p>
+            <div class="ht-card-footer">
+              <span class="ht-tag ht-tag--indigo"><i class="fas fa-baby"></i> Baby &amp; Child</span>
+              <button class="ht-read-more" aria-label="Read more about childhood fever">Read More <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="ht-card reveal" data-cat="wellness" data-title="The Importance of Staying Hydrated — Beyond Just Drinking Water">
+          <div class="ht-card-media ht-media--teal">
+            <i class="fas fa-tint"></i>
+            <span class="ht-card-tag">Wellness</span>
+          </div>
+          <div class="ht-card-body">
+            <div class="ht-card-meta">
+              <span class="ht-read-time"><i class="fas fa-clock"></i> 3 min read</span>
+            </div>
+            <h3>The Importance of Hydration — Beyond Just Water</h3>
+            <p>Dehydration affects kidney function, blood pressure, and cognitive performance. Aim for 8–10 glasses daily, increase intake during illness, and include coconut water or ORS during heavy sweating. Urine colour is the best hydration indicator.</p>
+            <div class="ht-card-footer">
+              <span class="ht-tag ht-tag--teal"><i class="fas fa-spa"></i> Wellness</span>
+              <button class="ht-read-more" aria-label="Read more about hydration">Read More <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="ht-card reveal" data-cat="medicine" data-title="Understanding Antibiotics: Use Them Right">
+          <div class="ht-card-media ht-media--blue">
+            <i class="fas fa-bacterium"></i>
+            <span class="ht-card-tag">Medicines</span>
+          </div>
+          <div class="ht-card-body">
+            <div class="ht-card-meta">
+              <span class="ht-read-time"><i class="fas fa-clock"></i> 5 min read</span>
+            </div>
+            <h3>Understanding Antibiotics: Use Them Right</h3>
+            <p>Antibiotics only work against bacteria — not viruses like the common cold. Always complete the full course even if you feel better, take them at the same time daily, and never share with others. Antibiotic resistance is a growing global health crisis.</p>
+            <div class="ht-card-footer">
+              <span class="ht-tag ht-tag--blue"><i class="fas fa-pills"></i> Medicines</span>
+              <button class="ht-read-more" aria-label="Read more about antibiotics">Read More <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="ht-card reveal" data-cat="chronic" data-title="Blood Pressure Control: Simple Lifestyle Habits That Work">
+          <div class="ht-card-media ht-media--red">
+            <i class="fas fa-heart-pulse"></i>
+            <span class="ht-card-tag">Chronic Care</span>
+          </div>
+          <div class="ht-card-body">
+            <div class="ht-card-meta">
+              <span class="ht-read-time"><i class="fas fa-clock"></i> 5 min read</span>
+            </div>
+            <h3>Blood Pressure: Simple Lifestyle Habits That Work</h3>
+            <p>Reduce sodium intake, walk 30 minutes daily, quit smoking, limit alcohol, and take BP medicines consistently — even when readings seem normal. Monitor at home with a validated device and log readings to share with your doctor.</p>
+            <div class="ht-card-footer">
+              <span class="ht-tag ht-tag--red"><i class="fas fa-heartbeat"></i> Chronic Care</span>
+              <button class="ht-read-more" aria-label="Read more about blood pressure">Read More <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 9 -->
+        <article class="ht-card reveal" data-cat="wellness" data-title="Sleep & Your Health: Why 7–8 Hours Matters">
+          <div class="ht-card-media ht-media--teal">
+            <i class="fas fa-moon"></i>
+            <span class="ht-card-tag">Wellness</span>
+          </div>
+          <div class="ht-card-body">
+            <div class="ht-card-meta">
+              <span class="ht-read-time"><i class="fas fa-clock"></i> 4 min read</span>
+            </div>
+            <h3>Sleep &amp; Your Health: Why 7–8 Hours Matters</h3>
+            <p>Chronic sleep deprivation raises the risk of obesity, diabetes, heart disease, and depression. Stick to consistent sleep and wake times, avoid screens 1 hour before bed, and keep your bedroom cool and dark for the best rest.</p>
+            <div class="ht-card-footer">
+              <span class="ht-tag ht-tag--teal"><i class="fas fa-spa"></i> Wellness</span>
+              <button class="ht-read-more" aria-label="Read more about sleep health">Read More <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /ht-grid -->
+
+      <!-- No results message -->
+      <div class="ht-no-results" id="ht-no-results" style="display:none;" aria-live="polite">
+        <div class="ht-no-results-icon"><i class="fas fa-search"></i></div>
+        <h3>No tips found</h3>
+        <p>Try a different keyword or browse all topics.</p>
+        <button class="ht-reset-btn" id="ht-reset">Show All Tips</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== ASK PHARMACIST CTA ===== -->
+  <section class="ht-ask-section">
+    <div class="container">
+      <div class="ht-ask-card reveal">
+        <div class="ht-ask-icon" aria-hidden="true">
+          <i class="fas fa-user-md"></i>
+        </div>
+        <div class="ht-ask-body">
+          <span class="badge-pill">Talk to an Expert</span>
+          <h2>Have a Health Question?</h2>
+          <p>Our licensed pharmacist is available in-store and on WhatsApp to answer your medication queries, explain prescriptions, and guide you on the right health choices — for free.</p>
+          <div class="ht-ask-actions">
+            <a href="https://wa.me/919501743529" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <i class="fab fa-whatsapp"></i> Ask on WhatsApp
+            </a>
+            <a href="contact.html" class="ht-contact-link">
+              <i class="fas fa-envelope"></i> Send a Message
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DISCLAIMER ===== -->
+  <div class="ht-disclaimer">
+    <div class="container">
+      <i class="fas fa-info-circle"></i>
+      <p>The health information on this page is for general educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified doctor or pharmacist before starting, stopping, or changing any medication.</p>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon"><i class="fas fa-plus-square"></i></div>
+            <div class="logo-text">
+              <div class="name">Namo Medical</div>
+              <div class="tagline">Your Health, Our Priority</div>
+            </div>
+          </div>
+          <p class="footer-desc">Serving the community with genuine medicines and healthcare products since 2009. Your trusted partner for retail and wholesale pharmaceutical needs.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/919501743529" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Products</a></li>
+            <li><a href="wholesale.html"><i class="fas fa-chevron-right"></i> Wholesale</a></li>
+            <li><a href="prescription.html"><i class="fas fa-chevron-right"></i> Prescription Upload</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Health Topics</h4>
+          <ul class="footer-links">
+            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> All Health Tips</a></li>
+            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> Medicine Advice</a></li>
+            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> Nutrition &amp; Diet</a></li>
+            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> Chronic Care</a></li>
+            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> Seasonal Health</a></li>
+            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> Baby &amp; Child</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>123, Main Market Road,<br />Your City – 000000,<br />India</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <span><a href="tel:+919501743529" style="color:#94a3b8;">+91 95017 43529</a></span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span><a href="mailto:info@namomedical.com" style="color:#94a3b8;">info@namomedical.com</a></span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <span>Mon–Sat: 8 AM – 10 PM<br />Sunday: 9 AM – 6 PM</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 Namo Medical Store. All rights reserved.</span>
+        <span>Designed with <i class="fas fa-heart" style="color:#f43f5e;"></i> for better health</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/health-tips.js"></script>
+</body>
+</html>
