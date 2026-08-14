@@ -1,0 +1,320 @@
+/* =============================================
+   NAMO MEDICAL – Micro-Interactions & Animations
+   animations.css  |  loaded on every page
+   ============================================= */
+
+/* ---- Timing tokens ---- */
+:root {
+  --t-btn:       220ms;
+  --t-card:      250ms;
+  --ease-spring: cubic-bezier(.175, .885, .32, 1.275);
+  --ease-out:    cubic-bezier(.25,  .46,  .45, .94);
+  --ease-in-out: cubic-bezier(.4,    0,   .2,  1);
+}
+
+/* =============================================
+   SCROLL-REVEAL BASE STATES
+   (JS in animations.js sets inline opacity/
+    transform/transition; these are fallbacks)
+   ============================================= */
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-scale,
+.reveal-fade {
+  /* Initial hidden state — overridden inline by JS for full control */
+  opacity: 0;
+}
+
+/* Visible state — JS adds this class */
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-scale.visible,
+.reveal-fade.visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* No-JS / reduced-motion fallback: always visible */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* =============================================
+   BUTTONS — scale + shadow micro-interaction
+   ============================================= */
+.btn-primary,
+.btn-secondary,
+.btn-call,
+.btn-details,
+.btn-submit,
+.ws-submit-btn,
+.ht-ask-btn,
+.ht-reset-btn,
+.btn-wholesale-link,
+.testi-btn,
+.ht-cat-btn {
+  transition:
+    transform    var(--t-btn) var(--ease-spring),
+    box-shadow   var(--t-btn) var(--ease-out),
+    background   var(--t-btn) var(--ease-out),
+    border-color var(--t-btn) var(--ease-out),
+    color        var(--t-btn) var(--ease-out),
+    opacity      var(--t-btn) !important;
+  will-change: transform;
+}
+
+.btn-primary:hover    { transform: translateY(-2px) scale(1.035) !important; }
+.btn-secondary:hover  { transform: translateY(-2px) scale(1.035) !important; }
+.btn-call:hover       { transform: translateY(-2px) scale(1.04)  !important; }
+.btn-details:hover    { transform: translateY(-2px) scale(1.03)  !important; }
+.btn-submit:hover     { transform: translateY(-2px) scale(1.025) !important; }
+.ws-submit-btn:hover  { transform: translateY(-2px) scale(1.025) !important; }
+.ht-ask-btn:hover     { transform: translateY(-2px) scale(1.03)  !important; }
+.ht-reset-btn:hover   { transform: translateY(-2px) scale(1.03)  !important; }
+
+.btn-primary:active,
+.btn-secondary:active,
+.btn-call:active,
+.btn-submit:active,
+.ws-submit-btn:active,
+.ht-ask-btn:active { transform: translateY(0) scale(.97) !important; transition-duration: 80ms !important; }
+
+/* ---- Ripple wave ---- */
+.ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .32);
+  pointer-events: none;
+  transform: scale(0);
+  animation: ripple-expand .55s var(--ease-out) forwards;
+}
+@keyframes ripple-expand {
+  to { transform: scale(4.5); opacity: 0; }
+}
+
+/* =============================================
+   CARDS — unified hover lift
+   ============================================= */
+.trust-card,
+.category-card,
+.product-card,
+.why-card,
+.ht-card,
+.info-card,
+.qc-card,
+.testi-card,
+.wholesale-note,
+.ht-ask-card {
+  transition:
+    transform    var(--t-card) var(--ease-out),
+    box-shadow   var(--t-card) var(--ease-out),
+    border-color var(--t-card) var(--ease-out) !important;
+  will-change: transform;
+}
+
+.trust-card:hover    { transform: translateY(-5px) scale(1.01) !important; }
+.why-card:hover      { transform: translateY(-6px) scale(1.01) !important; }
+.product-card:hover  { transform: translateY(-6px) scale(1.01) !important; }
+.qc-card:hover       { transform: translateY(-4px) scale(1.01) !important; }
+.ht-card:hover       { transform: translateY(-6px) scale(1.01) !important; }
+.category-card:hover { transform: translateY(-6px) scale(1.01) !important; }
+
+/* Icon wraps — spring scale */
+.trust-icon,
+.why-icon-wrap,
+.qc-icon-wrap,
+.ht-card-media i,
+.info-icon-wrap {
+  transition: transform var(--t-btn) var(--ease-spring) !important;
+}
+
+/* Logo subtle hover */
+.logo {
+  transition: transform 200ms var(--ease-out);
+}
+.logo:hover { transform: scale(1.02); }
+
+/* Nav links */
+.nav-menu a {
+  transition:
+    background  200ms var(--ease-out),
+    color       200ms var(--ease-out),
+    transform   200ms var(--ease-out) !important;
+}
+.nav-menu a:hover,
+.nav-menu a.active { transform: translateY(-1px); }
+
+/* Footer links */
+.footer-links a {
+  transition:
+    color        200ms var(--ease-out),
+    padding-left 200ms var(--ease-out),
+    transform    200ms var(--ease-out) !important;
+}
+.footer-links a:hover { transform: translateX(2px); }
+
+/* Social links */
+.social-links a {
+  transition:
+    background 200ms var(--ease-out),
+    color      200ms var(--ease-out),
+    transform  200ms var(--ease-spring) !important;
+}
+
+/* =============================================
+   FORM INPUTS — focus lift
+   ============================================= */
+.input-wrap input,
+.input-wrap select,
+.textarea-wrap textarea,
+.ws-input-wrap input,
+.ws-input-wrap select,
+.ws-textarea-wrap textarea {
+  transition:
+    border-color 200ms var(--ease-out),
+    box-shadow   200ms var(--ease-out),
+    background   200ms var(--ease-out),
+    transform    200ms var(--ease-out) !important;
+}
+
+.input-wrap:focus-within input,
+.input-wrap:focus-within select,
+.textarea-wrap:focus-within textarea,
+.ws-input-wrap:focus-within input,
+.ws-input-wrap:focus-within select,
+.ws-textarea-wrap:focus-within textarea {
+  transform: translateY(-1px);
+}
+
+.form-group:focus-within label,
+.ws-field-group:focus-within label {
+  color: var(--blue);
+  transition: color 200ms var(--ease-out);
+}
+
+/* =============================================
+   SUCCESS CHECKMARK — SVG draw animation
+   ============================================= */
+.success-svg-wrap {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+}
+.success-svg-wrap svg {
+  animation: bounce-in .5s var(--ease-spring) .05s both;
+  display: block;
+}
+@keyframes bounce-in {
+  0%   { transform: scale(0); opacity: 0; }
+  60%  { transform: scale(1.15); }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+.success-circle {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 3;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  stroke-linecap: round;
+  animation: draw-circle .6s var(--ease-out) .15s forwards;
+}
+.success-check {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 3.5;
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: draw-check .38s var(--ease-out) .65s forwards;
+}
+@keyframes draw-circle { to { stroke-dashoffset: 0; } }
+@keyframes draw-check  { to { stroke-dashoffset: 0; } }
+
+/* Success text animate in */
+.form-success h3,
+.ws-success-msg h3 {
+  animation: fade-up .4s var(--ease-out) .85s both;
+}
+.form-success p,
+.ws-success-msg p,
+.ws-success-msg .ws-success-sub {
+  animation: fade-up .4s var(--ease-out) 1s both;
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   PAGE HERO ENTRANCE
+   ============================================= */
+.page-hero-content {
+  animation: hero-entrance .75s var(--ease-out) .1s both;
+}
+@keyframes hero-entrance {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   HEADER TRANSITIONS
+   ============================================= */
+header {
+  transition: box-shadow 250ms var(--ease-out), transform 280ms var(--ease-in-out) !important;
+}
+
+/* =============================================
+   MOBILE NAV SLIDE
+   ============================================= */
+.mobile-nav {
+  transition: transform 280ms var(--ease-in-out) !important;
+}
+
+/* =============================================
+   HEALTH TIPS filter buttons — pop in on load
+   ============================================= */
+.ht-cat-btn {
+  transition:
+    background   200ms var(--ease-out),
+    color        200ms var(--ease-out),
+    border-color 200ms var(--ease-out),
+    transform    200ms var(--ease-spring),
+    box-shadow   200ms var(--ease-out) !important;
+}
+
+/* =============================================
+   TESTIMONIAL SECTION heading
+   ============================================= */
+.testimonials-section .section-title,
+.testimonials-section .section-subtitle,
+.testimonials-section .badge-pill {
+  /* JS handles these; keep them visible if JS fails */
+}
+
+/* =============================================
+   ACCESSIBILITY — reduced motion
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:       .01ms !important;
+    animation-iteration-count: 1   !important;
+    transition-duration:       .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .success-circle,
+  .success-check { stroke-dashoffset: 0 !important; }
+}

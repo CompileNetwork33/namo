@@ -111,7 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (!valid) {
-      // Scroll to first error
+      // Shake errored fields + scroll to first
+      form.querySelectorAll('.ws-error:not(:empty)').forEach(errEl => {
+        const field = errEl.previousElementSibling;
+        if (field && window.NamoAnim) window.NamoAnim.shake(field);
+      });
       const firstErr = form.querySelector('.error, input.error, select.error, textarea.error');
       if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;

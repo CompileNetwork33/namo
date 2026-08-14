@@ -89,7 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     if (!nameOk || !emailOk || !msgOk) {
-      // Scroll to first error
+      // Shake all errored fields + scroll to first
+      form.querySelectorAll('.error').forEach(el => {
+        if (window.NamoAnim) window.NamoAnim.shake(el);
+      });
       const firstError = form.querySelector('.error');
       if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;

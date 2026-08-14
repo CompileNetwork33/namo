@@ -46,17 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileClose.addEventListener('click', closeMobileNav);
   mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
 
-  // --- Scroll reveal ---
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revealObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => revealObserver.observe(el));
+  // Scroll reveal is handled by animations.js (unified system)
+
 
   // --- Counter animation for hero stats ---
   function animateCount(el, target, duration = 1800) {
