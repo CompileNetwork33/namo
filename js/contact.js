@@ -22,12 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setError(inputEl, errorId, msg) {
     inputEl.classList.add('error');
+    inputEl.classList.remove('success');
     const errEl = document.getElementById(errorId);
     if (errEl) errEl.textContent = msg;
   }
 
   function clearError(inputEl, errorId) {
     inputEl.classList.remove('error');
+    inputEl.classList.add('success');
     const errEl = document.getElementById(errorId);
     if (errEl) errEl.textContent = '';
   }

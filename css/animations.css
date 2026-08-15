@@ -1,9 +1,8 @@
 /* =============================================
    NAMO MEDICAL – Micro-Interactions & Animations
-   animations.css  |  loaded on every page
+   Healthtech Design System Palette
    ============================================= */
 
-/* ---- Timing tokens ---- */
 :root {
   --t-btn:       220ms;
   --t-card:      250ms;
@@ -12,21 +11,14 @@
   --ease-in-out: cubic-bezier(.4,    0,   .2,  1);
 }
 
-/* =============================================
-   SCROLL-REVEAL BASE STATES
-   (JS in animations.js sets inline opacity/
-    transform/transition; these are fallbacks)
-   ============================================= */
 .reveal,
 .reveal-left,
 .reveal-right,
 .reveal-scale,
 .reveal-fade {
-  /* Initial hidden state — overridden inline by JS for full control */
   opacity: 0;
 }
 
-/* Visible state — JS adds this class */
 .reveal.visible,
 .reveal-left.visible,
 .reveal-right.visible,
@@ -36,7 +28,6 @@
   transform: none !important;
 }
 
-/* No-JS / reduced-motion fallback: always visible */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-left,
@@ -49,9 +40,7 @@
   }
 }
 
-/* =============================================
-   BUTTONS — scale + shadow micro-interaction
-   ============================================= */
+/* BUTTONS */
 .btn-primary,
 .btn-secondary,
 .btn-call,
@@ -89,11 +78,11 @@
 .ws-submit-btn:active,
 .ht-ask-btn:active { transform: translateY(0) scale(.97) !important; transition-duration: 80ms !important; }
 
-/* ---- Ripple wave ---- */
+/* Ripple wave */
 .ripple-wave {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, .32);
+  background: rgba(15, 118, 110, .35);
   pointer-events: none;
   transform: scale(0);
   animation: ripple-expand .55s var(--ease-out) forwards;
@@ -102,9 +91,7 @@
   to { transform: scale(4.5); opacity: 0; }
 }
 
-/* =============================================
-   CARDS — unified hover lift
-   ============================================= */
+/* CARDS */
 .trust-card,
 .category-card,
 .product-card,
@@ -129,7 +116,6 @@
 .ht-card:hover       { transform: translateY(-6px) scale(1.01) !important; }
 .category-card:hover { transform: translateY(-6px) scale(1.01) !important; }
 
-/* Icon wraps — spring scale */
 .trust-icon,
 .why-icon-wrap,
 .qc-icon-wrap,
@@ -138,13 +124,9 @@
   transition: transform var(--t-btn) var(--ease-spring) !important;
 }
 
-/* Logo subtle hover */
-.logo {
-  transition: transform 200ms var(--ease-out);
-}
+.logo { transition: transform 200ms var(--ease-out); }
 .logo:hover { transform: scale(1.02); }
 
-/* Nav links */
 .nav-menu a {
   transition:
     background  200ms var(--ease-out),
@@ -154,7 +136,6 @@
 .nav-menu a:hover,
 .nav-menu a.active { transform: translateY(-1px); }
 
-/* Footer links */
 .footer-links a {
   transition:
     color        200ms var(--ease-out),
@@ -163,7 +144,6 @@
 }
 .footer-links a:hover { transform: translateX(2px); }
 
-/* Social links */
 .social-links a {
   transition:
     background 200ms var(--ease-out),
@@ -171,9 +151,6 @@
     transform  200ms var(--ease-spring) !important;
 }
 
-/* =============================================
-   FORM INPUTS — focus lift
-   ============================================= */
 .input-wrap input,
 .input-wrap select,
 .textarea-wrap textarea,
@@ -198,13 +175,11 @@
 
 .form-group:focus-within label,
 .ws-field-group:focus-within label {
-  color: var(--blue);
+  color: var(--navy);
   transition: color 200ms var(--ease-out);
 }
 
-/* =============================================
-   SUCCESS CHECKMARK — SVG draw animation
-   ============================================= */
+/* SUCCESS CHECKMARK */
 .success-svg-wrap {
   width: 80px;
   height: 80px;
@@ -222,7 +197,7 @@
 
 .success-circle {
   fill: none;
-  stroke: var(--green);
+  stroke: var(--navy);
   stroke-width: 3;
   stroke-dasharray: 220;
   stroke-dashoffset: 220;
@@ -231,7 +206,7 @@
 }
 .success-check {
   fill: none;
-  stroke: var(--green);
+  stroke: var(--rose-gold);
   stroke-width: 3.5;
   stroke-dasharray: 80;
   stroke-dashoffset: 80;
@@ -242,7 +217,6 @@
 @keyframes draw-circle { to { stroke-dashoffset: 0; } }
 @keyframes draw-check  { to { stroke-dashoffset: 0; } }
 
-/* Success text animate in */
 .form-success h3,
 .ws-success-msg h3 {
   animation: fade-up .4s var(--ease-out) .85s both;
@@ -257,9 +231,6 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* =============================================
-   PAGE HERO ENTRANCE
-   ============================================= */
 .page-hero-content {
   animation: hero-entrance .75s var(--ease-out) .1s both;
 }
@@ -268,23 +239,14 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* =============================================
-   HEADER TRANSITIONS
-   ============================================= */
 header {
   transition: box-shadow 250ms var(--ease-out), transform 280ms var(--ease-in-out) !important;
 }
 
-/* =============================================
-   MOBILE NAV SLIDE
-   ============================================= */
 .mobile-nav {
   transition: transform 280ms var(--ease-in-out) !important;
 }
 
-/* =============================================
-   HEALTH TIPS filter buttons — pop in on load
-   ============================================= */
 .ht-cat-btn {
   transition:
     background   200ms var(--ease-out),
@@ -294,27 +256,236 @@ header {
     box-shadow   200ms var(--ease-out) !important;
 }
 
-/* =============================================
-   TESTIMONIAL SECTION heading
-   ============================================= */
-.testimonials-section .section-title,
-.testimonials-section .section-subtitle,
-.testimonials-section .badge-pill {
-  /* JS handles these; keep them visible if JS fails */
+/* FLOATING WHATSAPP BUTTON */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9000;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--rose-gold);
+  border: 1.5px solid var(--rose-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(15,27,45,.4);
+  transition: transform 220ms cubic-bezier(.175,.885,.32,1.275), box-shadow 220ms ease;
+}
+.wa-float:hover {
+  transform: scale(1.12);
+  background: var(--navy-light);
+  box-shadow: 0 10px 32px rgba(15,27,45,.5);
+}
+.wa-float:active { transform: scale(.95); }
+
+.wa-float::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(201, 169, 166, 0.55);
+  animation: wa-pulse 2.2s ease-out infinite;
+}
+.wa-float::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201, 169, 166, 0.25);
+  animation: wa-pulse 2.2s ease-out .55s infinite;
+}
+@keyframes wa-pulse {
+  0%   { transform: scale(1); opacity: 1; }
+  70%  { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1.5); opacity: 0; }
 }
 
-/* =============================================
-   ACCESSIBILITY — reduced motion
-   ============================================= */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration:       .01ms !important;
-    animation-iteration-count: 1   !important;
-    transition-duration:       .01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .success-circle,
-  .success-check { stroke-dashoffset: 0 !important; }
+.wa-float .wa-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  white-space: nowrap;
+  background: var(--navy);
+  color: white;
+  border: 1px solid var(--rose-gold);
+  font-size: .8rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  padding: .45rem .9rem;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 200ms ease, transform 200ms ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+.wa-float .wa-tooltip::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: var(--navy);
+}
+.wa-float:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.page-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--gray-50);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+.page-veil.out { opacity: 1; pointer-events: all; }
+
+.namo-spinner {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.namo-spinner span {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: spinner-bounce .8s ease-in-out infinite;
+}
+.namo-spinner span:nth-child(2) { animation-delay: .15s; }
+.namo-spinner span:nth-child(3) { animation-delay: .3s; }
+@keyframes spinner-bounce {
+  0%, 80%, 100% { transform: scale(.6); opacity: .5; }
+  40%           { transform: scale(1);   opacity: 1;  }
+}
+
+.btn-loading {
+  position: relative;
+  cursor: wait !important;
+  opacity: .85;
+}
+.btn-loading .btn-label { visibility: hidden; }
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px; height: 20px;
+  border: 2.5px solid rgba(255,255,255,.4);
+  border-top-color: var(--rose-gold);
+  border-radius: 50%;
+  animation: spin-ring .65s linear infinite;
+}
+@keyframes spin-ring { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--gray-100) 25%,
+    var(--gray-200) 50%,
+    var(--gray-100) 75%
+  );
+  background-size: 300% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius);
+}
+@keyframes shimmer {
+  0%   { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+
+/* DESIGN CONSISTENCY TOKENS */
+input, select, textarea,
+.input-wrap input,
+.input-wrap select,
+.textarea-wrap textarea,
+.ws-input-wrap input,
+.ws-input-wrap select,
+.ws-textarea-wrap textarea,
+.ws-form-card,
+.contact-form-card,
+.rx-form-card,
+.ht-card,
+.info-card {
+  border-radius: var(--radius) !important;
+}
+
+.btn-primary, .btn-secondary, .btn-call,
+.btn-submit, .ws-submit-btn, .ht-ask-btn,
+.badge-pill, .testi-dot.active,
+.ht-cat-btn, .ht-reset-btn {
+  border-radius: 50px !important;
+}
+
+.trust-card, .category-card, .product-card,
+.why-card, .testi-card, .qc-card,
+.wholesale-note, .mission-card, .team-card,
+.license-inner, .ht-featured-card, .ht-ask-card {
+  border-radius: var(--radius-lg) !important;
+}
+
+.trust-section,
+.categories-section,
+.products-page-section,
+.testimonials-section,
+.story-section,
+.mission-section,
+.team-section,
+.why-section,
+.license-section,
+.ht-grid-section,
+.ht-ask-section,
+.contact-main-section,
+.ht-featured-section {
+  padding-top:    5rem;
+  padding-bottom: 5rem;
+}
+
+.section-title  { margin-bottom: .5rem !important; }
+.section-subtitle { margin-bottom: 2.75rem !important; }
+
+/* SCROLL-TO-TOP BUTTON */
+.scroll-top {
+  position: fixed;
+  bottom: 98px;
+  right: 28px;
+  z-index: 8999;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--rose-gold);
+  border: 1px solid var(--rose-gold);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem;
+  box-shadow: 0 4px 16px rgba(15,27,45,.3);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 250ms ease, transform 250ms ease, background 200ms ease;
+  pointer-events: none;
+}
+.scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+.scroll-top:hover {
+  background: var(--navy-light);
+  transform: translateY(-2px);
+}
+.scroll-top:active { transform: translateY(0); }
+
+@media (max-width: 480px) {
+  .wa-float  { bottom: 20px; right: 20px; width: 52px; height: 52px; font-size: 1.5rem; }
+  .scroll-top{ bottom: 84px; right: 20px; }
 }

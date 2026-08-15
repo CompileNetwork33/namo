@@ -9,37 +9,27 @@
 
   // =============================================
   // 1. UNIFIED SCROLL-REVEAL ENGINE
-  //    Single IntersectionObserver owns ALL reveal
-  //    elements. Stagger is applied programmatically
-  //    so it works regardless of CSS nth-child limits.
   // =============================================
 
-  // Animation variants assigned by element type
   const VARIANT_MAP = {
-    // Slide up + fade (default)
     'reveal':           { from: 'translateY(32px)', opacity: 0 },
-    // Slide left → right
     'reveal-left':      { from: 'translateX(-40px)', opacity: 0 },
-    // Slide right → left
     'reveal-right':     { from: 'translateX(40px)', opacity: 0 },
-    // Pop in from scale 0.88
     'reveal-scale':     { from: 'scale(.88)',  opacity: 0 },
-    // Fade only (no movement)
     'reveal-fade':      { from: 'translateY(0)', opacity: 0 },
   };
 
-  // Stagger groups — children of these parents get auto-staggered
   const STAGGER_PARENTS = [
     '.trust-grid',
     '.categories-grid',
     '.products-grid',
     '.why-grid',
     '.ht-grid',
-    '.testi-track',        // testimonial cards
+    '.testi-track',
     '.qual-list',
     '.story-highlights',
     '.license-items',
-    '.ht-cats',            // filter buttons
+    '.ht-cats',
     '.footer-grid',
     '.ws-serve-grid',
     '.ws-process-steps',
@@ -47,10 +37,8 @@
     '.rx-trust-grid',
   ];
 
-  // Stagger interval in ms
   const STAGGER_MS = 80;
 
-  // Initialize initial CSS state for each reveal element
   function initEl(el) {
     if (prefersReduced) {
       el.style.opacity = '1';
@@ -85,12 +73,10 @@
     }, delay);
   }
 
-  // ── Assign stagger delays to grid children ──────────────────────────────
   function assignStagger() {
     STAGGER_PARENTS.forEach(selector => {
       const parent = document.querySelector(selector);
       if (!parent) return;
-      // Direct children that are also reveal elements
       const children = Array.from(parent.children).filter(
         c => c.classList.contains('reveal') ||
              c.classList.contains('reveal-left') ||
@@ -104,7 +90,6 @@
     });
   }
 
-  // ── Build the observer ────────────────────────────────────────────────────
   function buildObserver() {
     const allReveal = document.querySelectorAll(
       '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade'
@@ -112,10 +97,8 @@
 
     if (allReveal.length === 0) return;
 
-    // Init styles
     allReveal.forEach(initEl);
 
-    // If reduced motion, just show everything immediately
     if (prefersReduced) {
       allReveal.forEach(el => el.classList.add('visible'));
       return;
@@ -137,8 +120,6 @@
     allReveal.forEach(el => obs.observe(el));
   }
 
-  // ── Section-level entrance (sections themselves fade up) ─────────────────
-  // Only the page sections that are NOT grids (which use card-level reveal)
   const SECTION_SELECTORS = [
     '.page-hero',
     '.cta-strip',
@@ -154,13 +135,10 @@
     if (!sections.length) return;
 
     sections.forEach(sec => {
-      sec.style.opacity   = '1';  // sections show immediately—hero must never hide
+      sec.style.opacity = '1';
     });
   }
 
-  // ── Testimonial carousel special treatment ───────────────────────────────
-  // The testi-track contains all cards; animate the wrapper in, then the
-  // controls fade up after a short extra delay.
   function animateTestimonialSection() {
     if (prefersReduced) return;
 
@@ -168,7 +146,6 @@
     const controls  = document.querySelector('.testi-controls');
     if (!carousel) return;
 
-    // Carousel wrapper slides up
     carousel.style.opacity   = '0';
     carousel.style.transform = 'translateY(28px)';
     carousel.style.transition = 'opacity 650ms cubic-bezier(.25,.46,.45,.94), transform 650ms cubic-bezier(.25,.46,.45,.94)';
@@ -176,13 +153,11 @@
     const carouselObs = new IntersectionObserver((entries) => {
       if (!entries[0].isIntersecting) return;
 
-      // Carousel slides in
       setTimeout(() => {
         carousel.style.opacity   = '1';
         carousel.style.transform = 'none';
       }, 0);
 
-      // Controls fade up after carousel appears
       if (controls) {
         controls.style.opacity   = '0';
         controls.style.transform = 'translateY(14px)';
@@ -193,7 +168,6 @@
         }, 350);
       }
 
-      // Individual testi-cards cascade in (visible inside carousel)
       const cards = carousel.querySelectorAll('.testi-card');
       cards.forEach((card, i) => {
         card.style.opacity   = '0';
@@ -211,11 +185,9 @@
     carouselObs.observe(carousel);
   }
 
-  // ── Section header badge + title stagger ────────────────────────────────
   function animateSectionHeaders() {
     if (prefersReduced) return;
 
-    // Find every section heading pair (badge-pill + section-title + section-subtitle)
     document.querySelectorAll('.section-title').forEach((title, i) => {
       const section = title.closest('section');
       if (!section) return;
@@ -225,7 +197,6 @@
 
       [badge, title, subtitle].forEach((el, j) => {
         if (!el) return;
-        // Skip if already handled by card-level reveal
         if (el.classList.contains('reveal')) return;
 
         el.style.opacity   = '0';
@@ -249,27 +220,20 @@
     });
   }
 
-  // ── Feature-section cards — assign reveal-scale to icon-heavy cards ──────
-  // These get a scale-in rather than slide-up for variety
   function assignVariants() {
-    // Trust cards → scale in
     document.querySelectorAll('.trust-card.reveal').forEach(c => {
       c.classList.add('reveal-scale');
     });
 
-    // qc-cards → slide from left/right alternating
     document.querySelectorAll('.qc-card.reveal').forEach((c, i) => {
       if (i % 2 === 0) c.classList.add('reveal-left');
-      else             c.classList.remove('reveal'); // middle stays default
     });
 
-    // Story grid: image slides left, text slides right
     const storyImg = document.querySelector('.story-img-wrap.reveal');
     const storyCon = document.querySelector('.story-content.reveal');
     if (storyImg) storyImg.classList.add('reveal-left');
     if (storyCon) storyCon.classList.add('reveal-right');
 
-    // Map frame — just fade
     const mapFrame = document.querySelector('.map-frame-wrap.reveal');
     if (mapFrame) mapFrame.classList.add('reveal-fade');
   }
@@ -299,7 +263,7 @@
   ).forEach(btn => btn.addEventListener('click', addRipple));
 
   // =============================================
-  // 3. CARD 3-D TILT on mousemove
+  // 3. CARD 3-D TILT
   // =============================================
   if (!prefersReduced && window.innerWidth >= 768) {
     document.querySelectorAll(
@@ -319,15 +283,29 @@
   }
 
   // =============================================
-  // 4. MOBILE HEADER — hide on scroll-down
+  // 4. MOBILE HEADER & SCROLL-TO-TOP
   // =============================================
   const header = document.getElementById('main-header');
-  if (header) {
-    let lastY = 0, ticking = false;
-    const onScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const y = window.scrollY;
+  let scrollTopBtn = document.querySelector('.scroll-top');
+
+  if (!scrollTopBtn) {
+    scrollTopBtn = document.createElement('button');
+    scrollTopBtn.className = 'scroll-top';
+    scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
+    scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    document.body.appendChild(scrollTopBtn);
+  }
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  let lastY = 0, ticking = false;
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (header) {
           header.classList.toggle('scrolled', y > 60);
           if (window.innerWidth < 768) {
             header.style.transition = 'transform 280ms cubic-bezier(.4,0,.2,1)';
@@ -337,17 +315,62 @@
           } else {
             header.style.transform = '';
           }
-          lastY = y;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
+        }
+        if (scrollTopBtn) {
+          scrollTopBtn.classList.toggle('visible', y > 300);
+        }
+        lastY = y;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // =============================================
+  // 5. FLOATING WHATSAPP BUTTON (bottom-right)
+  // =============================================
+  function initWhatsAppFloat() {
+    if (document.querySelector('.wa-float')) return;
+    const wa = document.createElement('a');
+    wa.className = 'wa-float';
+    wa.href = 'https://wa.me/919501743529';
+    wa.target = '_blank';
+    wa.rel = 'noopener noreferrer';
+    wa.setAttribute('aria-label', 'Chat on WhatsApp');
+    wa.innerHTML = `
+      <i class="fab fa-whatsapp"></i>
+      <span class="wa-tooltip">Chat with Pharmacist</span>
+    `;
+    document.body.appendChild(wa);
   }
 
   // =============================================
-  // 5. SVG CHECKMARK — inject into success states
+  // 6. PAGE TRANSITIONS
+  // =============================================
+  function initPageTransitions() {
+    if (prefersReduced) return;
+    const veil = document.createElement('div');
+    veil.className = 'page-veil';
+    document.body.appendChild(veil);
+
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('mailto:') || a.target === '_blank') {
+        return;
+      }
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        veil.classList.add('out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 220);
+      });
+    });
+  }
+
+  // =============================================
+  // 7. SVG CHECKMARK & INPUT SHAKE
   // =============================================
   const SVG = `<div class="success-svg-wrap" aria-hidden="true">
     <svg viewBox="0 0 70 70" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
@@ -367,9 +390,6 @@
     box.insertAdjacentHTML('afterbegin', SVG);
   });
 
-  // =============================================
-  // 6. INPUT SHAKE (exposed for form scripts)
-  // =============================================
   function shakeEl(el) {
     if (prefersReduced) return;
     el.animate([
@@ -385,13 +405,15 @@
   window.NamoAnim = { shake: shakeEl, ripple: addRipple };
 
   // =============================================
-  // BOOT — run everything in order
+  // BOOT
   // =============================================
-  assignVariants();       // classify elements first
-  assignStagger();        // inject data-reveal-delay on grid children
-  buildObserver();        // single IO watches every .reveal* element
-  buildSectionObserver(); // section wrappers
-  animateSectionHeaders(); // badge + title + subtitle cascade
-  animateTestimonialSection(); // carousel special treatment
+  initWhatsAppFloat();
+  initPageTransitions();
+  assignVariants();
+  assignStagger();
+  buildObserver();
+  buildSectionObserver();
+  animateSectionHeaders();
+  animateTestimonialSection();
 
 })();
