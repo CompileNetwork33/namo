@@ -2,11 +2,11 @@
 // NAMO MEDICAL STORE - Firebase Configuration
 // Replace the placeholder values below with your
 // Firebase project credentials from the Firebase Console.
+// Firestore only — no Firebase Storage (avoids billing).
 // =============================================
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-import { getStorage } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-storage.js';
 
 // ── Replace these placeholders with your Firebase config ──
 const firebaseConfig = {
@@ -20,6 +20,5 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const storage = getStorage(app);
 
-export { app, db, storage };
+export { app, db };

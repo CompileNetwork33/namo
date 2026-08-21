@@ -97,16 +97,16 @@
       <div class="rx-steps">
         <div class="rx-step reveal">
           <div class="rx-step-num">01</div>
-          <div class="rx-step-icon"><i class="fas fa-camera"></i></div>
-          <h3>Photograph Your Prescription</h3>
-          <p>Take a clear photo of your doctor's prescription (JPG, PNG, or PDF accepted).</p>
+          <div class="rx-step-icon"><i class="fas fa-pen-to-square"></i></div>
+          <h3>Submit Your Details</h3>
+          <p>Fill in your name, phone, and delivery address on the form below.</p>
         </div>
         <div class="rx-step-arrow"><i class="fas fa-chevron-right"></i></div>
         <div class="rx-step reveal">
           <div class="rx-step-num">02</div>
-          <div class="rx-step-icon"><i class="fas fa-upload"></i></div>
-          <h3>Fill &amp; Submit Form</h3>
-          <p>Enter your details, upload the photo, and submit. We'll verify and prepare your order.</p>
+          <div class="rx-step-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>Send Photo on WhatsApp</h3>
+          <p>After saving, tap the WhatsApp button and attach a clear photo of your prescription.</p>
         </div>
         <div class="rx-step-arrow"><i class="fas fa-chevron-right"></i></div>
         <div class="rx-step reveal">
@@ -156,14 +156,13 @@
           </div>
 
           <div class="rx-accepted-formats">
-            <h4><i class="fas fa-paperclip"></i> Accepted Formats</h4>
+            <h4><i class="fab fa-whatsapp"></i> Prescription Photo</h4>
             <div class="rx-format-tags">
               <span><i class="fas fa-image"></i> JPG / JPEG</span>
               <span><i class="fas fa-image"></i> PNG</span>
-              <span><i class="far fa-file-pdf"></i> PDF</span>
-              <span><i class="fas fa-image"></i> WEBP</span>
+              <span><i class="fas fa-image"></i> Clear photo</span>
             </div>
-            <p class="rx-format-note"><i class="fas fa-info-circle"></i> Max file size: 10 MB. Ensure prescription text is clearly readable.</p>
+            <p class="rx-format-note"><i class="fas fa-info-circle"></i> Send your prescription photo on WhatsApp after submitting the form. Ensure the text is clearly readable.</p>
           </div>
 
           <div class="rx-helpline">
@@ -186,17 +185,27 @@
               </div>
               <div class="rx-success-pulse"></div>
             </div>
-            <h3>Prescription Received!</h3>
-            <p>Thank you, we'll contact you shortly to confirm your order and arrange delivery.</p>
+            <h3>Details Saved!</h3>
+            <p>Details saved! Please also send your prescription photo on WhatsApp so we can process your order.</p>
             <p class="rx-success-sub">
-              For urgent needs, call us at <a href="tel:+919501743529">+91 9501743529</a> or
-              <a href="https://wa.me/919501743529" target="_blank">WhatsApp us</a>.
+              Attach a clear photo of your prescription in the WhatsApp chat that opens.
             </p>
+            <div class="rx-success-actions">
+              <a
+                href="https://wa.me/91XXXXXXXXXX"
+                id="rx-whatsapp-btn"
+                class="rx-whatsapp-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-whatsapp"></i> Send Photo on WhatsApp
+              </a>
+              <button type="button" class="rx-reset-btn" id="rx-reset-btn">Submit Another Order</button>
+            </div>
             <div class="rx-success-tags">
               <span><i class="fas fa-clock"></i> We respond within 30 minutes</span>
               <span><i class="fas fa-truck-fast"></i> Same-day delivery available</span>
             </div>
-            <button class="rx-reset-btn" id="rx-reset-btn">Upload Another Prescription</button>
           </div>
 
           <!-- The form -->
@@ -204,8 +213,8 @@
             <div class="rx-form-header">
               <div class="rx-form-header-icon"><i class="fas fa-file-medical-alt"></i></div>
               <div>
-                <h2>Prescription Upload Form</h2>
-                <p>For retail customers only &mdash; fill in all fields below.</p>
+                <h2>Prescription Order Form</h2>
+                <p>For retail customers only &mdash; submit your details, then send the prescription photo on WhatsApp.</p>
               </div>
             </div>
 
@@ -258,36 +267,6 @@
               <span class="rx-error" id="err-rx-address">Please enter your delivery address.</span>
             </div>
 
-            <!-- Upload Prescription -->
-            <div class="rx-field-group">
-              <label for="rx-file">Upload Prescription Photo <span class="req">*</span></label>
-              <div class="rx-upload-area" id="rx-upload-area">
-                <input
-                  type="file"
-                  id="rx-file"
-                  name="rx-file"
-                  accept="image/jpeg,image/png,image/webp,application/pdf"
-                  class="rx-file-input"
-                />
-                <div class="rx-upload-content" id="rx-upload-content">
-                  <div class="rx-upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                  <p class="rx-upload-text">Click to upload or drag &amp; drop</p>
-                  <p class="rx-upload-hint">JPG, PNG, WEBP or PDF &bull; Max 10 MB</p>
-                </div>
-                <div class="rx-upload-preview" id="rx-upload-preview" style="display:none;">
-                  <img id="rx-preview-img" src="" alt="Prescription preview" />
-                  <div class="rx-preview-info">
-                    <span class="rx-preview-name" id="rx-preview-name"></span>
-                    <span class="rx-preview-size" id="rx-preview-size"></span>
-                    <button type="button" class="rx-remove-file" id="rx-remove-file" aria-label="Remove file">
-                      <i class="fas fa-times-circle"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <span class="rx-error" id="err-rx-file">Please upload your prescription photo or PDF.</span>
-            </div>
-
             <!-- Additional Notes -->
             <div class="rx-field-group">
               <label for="rx-notes">Additional Notes <span class="rx-optional">(Optional)</span></label>
@@ -302,17 +281,22 @@
               </div>
             </div>
 
+            <div class="rx-whatsapp-note">
+              <i class="fab fa-whatsapp"></i>
+              <p>After submitting, you will be asked to send your prescription photo on WhatsApp so we can process your order.</p>
+            </div>
+
             <!-- Terms note -->
             <p class="rx-terms-note">
               <i class="fas fa-info-circle"></i>
-              By submitting, you confirm this is a valid doctor's prescription. We reserve the right to decline orders if the prescription is unclear or invalid.
+              By submitting, you confirm you will provide a valid doctor's prescription via WhatsApp. We reserve the right to decline orders if the prescription is unclear or invalid.
             </p>
 
             <p class="form-submit-error" id="rx-submit-error" role="alert" style="display:none;"></p>
 
             <button type="submit" class="rx-submit-btn" id="rx-submit-btn">
               <i class="fas fa-paper-plane"></i>
-              <span id="rx-btn-text">Send Prescription &amp; Order</span>
+              <span id="rx-btn-text">Submit Order Details</span>
               <span class="rx-btn-spinner" id="rx-spinner" style="display:none;"><i class="fas fa-circle-notch fa-spin"></i></span>
             </button>
           </form>
