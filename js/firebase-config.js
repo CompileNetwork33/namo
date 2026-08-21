@@ -1,24 +1,32 @@
 // =============================================
 // NAMO MEDICAL STORE - Firebase Configuration
-// Replace the placeholder values below with your
-// Firebase project credentials from the Firebase Console.
 // Firestore only — no Firebase Storage (avoids billing).
 // =============================================
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { getAnalytics, isSupported } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 
-// ── Replace these placeholders with your Firebase config ──
 const firebaseConfig = {
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_PROJECT_ID.appspot.com',
-  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-  appId: 'YOUR_APP_ID',
+  apiKey: 'AIzaSyCjX7bm3iywhL35UKLhu7563J2tEVVPzPY',
+  authDomain: 'namo-medical-store.firebaseapp.com',
+  projectId: 'namo-medical-store',
+  storageBucket: 'namo-medical-store.firebasestorage.app',
+  messagingSenderId: '810733538895',
+  appId: '1:810733538895:web:f36f182897a47e2c72643a',
+  measurementId: 'G-KBF8RTGVP6',
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
+// Analytics only when supported (browser + HTTPS / localhost)
+isSupported()
+  .then((ok) => {
+    if (ok) getAnalytics(app);
+  })
+  .catch(() => {
+    /* Analytics unavailable — ignore */
+  });
 
 export { app, db };
