@@ -191,6 +191,7 @@
                     autocomplete="tel"
                   />
                 </div>
+                <span class="field-error" id="error-phone"></span>
               </div>
 
               <div class="form-group">
@@ -223,6 +224,8 @@
                 </div>
                 <span class="field-error" id="error-message"></span>
               </div>
+
+              <p class="form-submit-error" id="contact-submit-error" role="alert" style="display:none;"></p>
 
               <button type="submit" class="btn-submit" id="contact-submit">
                 <span class="btn-submit-text">
@@ -450,6 +453,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
-  <script src="js/contact.js"></script>
+  <script type="module" src="js/contact.js"></script>
 </body>
 </html>

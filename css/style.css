@@ -1037,3 +1037,16 @@ footer {
   .testi-card { padding: 1.75rem 1.5rem; }
   .testi-text { font-size: .93rem; }
 }
+
+/* Shared form submit error (Firebase / network failures) */
+.form-submit-error {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  background: var(--error-bg);
+  color: var(--error);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.45;
+}

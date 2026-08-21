@@ -2,6 +2,10 @@
 // NAMO MEDICAL STORE - Prescription Page JS
 // =============================================
 
+import { db, storage } from './firebase-config.js';
+import { collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-storage.js';
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const form       = document.getElementById('rx-form');
@@ -9,13 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetBtn   = document.getElementById('rx-reset-btn');
   const submitBtn  = document.getElementById('rx-submit-btn');
   const spinner    = document.getElementById('rx-spinner');
+  const submitError = document.getElementById('rx-submit-error');
 
   if (!form) return;
 
+  const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+  const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'];
+
   // ── Validation helpers ──────────────────────────────────
-  function showError(errId, fieldEl) {
+  function showError(errId, fieldEl, customMsg) {
     const errEl = document.getElementById(errId);
-    if (errEl) errEl.classList.add('visible');
+    if (errEl) {
+      if (customMsg) errEl.textContent = customMsg;
+      errEl.classList.add('visible');
+    }
     if (fieldEl) {
       fieldEl.classList.remove('valid');
       fieldEl.classList.add('error');
@@ -33,7 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function isValidPhone(val) {
     const digits = val.replace(/\D/g, '');
-    return digits.length >= 10;
+    // Indian numbers: 10 digits, optionally with country code 91
+    if (digits.length === 10) return /^[6-9]/.test(digits);
+    if (digits.length === 12 && digits.startsWith('91')) return /^[6-9]/.test(digits.slice(2));
+    return false;
   }
 
   function validateField(id) {
@@ -50,6 +64,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     clearError('err-' + id, el);
     return true;
+  }
+
+  function setLoading(isLoading) {
+    submitBtn.disabled = isLoading;
+    spinner.style.display = isLoading ? 'inline-block' : 'none';
+    document.getElementById('rx-btn-text').textContent = isLoading
+      ? 'Uploading…'
+      : 'Send Prescription & Order';
+  }
+
+  function showSubmitError(msg) {
+    if (!submitError) return;
+    submitError.textContent = msg;
+    submitError.style.display = 'block';
+  }
+
+  function hideSubmitError() {
+    if (!submitError) return;
+    submitError.textContent = '';
+    submitError.style.display = 'none';
   }
 
   // ── Live validation on blur ─────────────────────────────
@@ -80,13 +114,26 @@ document.addEventListener('DOMContentLoaded', () => {
     return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
   }
 
+  function validateFile(file) {
+    if (!ALLOWED_TYPES.includes(file.type)) {
+      showError('err-rx-file', null, 'Please upload a JPG, PNG, WEBP, or PDF file.');
+      uploadArea.classList.add('error-state');
+      return false;
+    }
+    if (file.size > MAX_FILE_SIZE) {
+      showError('err-rx-file', null, 'File is too large. Maximum size is 10 MB.');
+      uploadArea.classList.add('error-state');
+      return false;
+    }
+    return true;
+  }
+
   function showPreview(file) {
     selectedFile = file;
     previewName.textContent = file.name;
     previewSize.textContent = formatBytes(file.size);
 
     if (file.type === 'application/pdf') {
-      // Show a PDF icon placeholder instead of an image
       previewImg.style.display = 'none';
       let pdfThumb = uploadPreview.querySelector('.rx-pdf-thumb');
       if (!pdfThumb) {
@@ -123,9 +170,18 @@ document.addEventListener('DOMContentLoaded', () => {
     uploadArea.classList.remove('has-file', 'drag-over', 'error-state');
   }
 
+  function handleFileSelect(file) {
+    if (!file) return;
+    if (!validateFile(file)) {
+      clearFile();
+      return;
+    }
+    showPreview(file);
+  }
+
   fileInput.addEventListener('change', () => {
     if (fileInput.files && fileInput.files[0]) {
-      showPreview(fileInput.files[0]);
+      handleFileSelect(fileInput.files[0]);
     }
   });
 
@@ -147,31 +203,33 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     uploadArea.classList.remove('drag-over');
     const file = e.dataTransfer.files[0];
-    if (file) {
-      const allowed = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'];
-      if (!allowed.includes(file.type)) {
-        showError('err-rx-file', null);
-        uploadArea.classList.add('error-state');
-        return;
-      }
-      showPreview(file);
-    }
+    if (file) handleFileSelect(file);
   });
 
+  // ── Unique filename for Storage ─────────────────────────
+  function buildUniqueFilename(file) {
+    const ext = file.name.includes('.')
+      ? file.name.split('.').pop().toLowerCase()
+      : 'bin';
+    const unique = `${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+    return `prescriptions/${unique}.${ext}`;
+  }
+
   // ── Form Submit ─────────────────────────────────────────
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    hideSubmitError();
     let valid = true;
 
-    // Text fields
     ['rx-name', 'rx-phone', 'rx-address'].forEach(id => {
       if (!validateField(id)) valid = false;
     });
 
-    // File validation
     if (!selectedFile) {
-      showError('err-rx-file', null);
+      showError('err-rx-file', null, 'Please upload your prescription photo or PDF.');
       uploadArea.classList.add('error-state');
+      valid = false;
+    } else if (!validateFile(selectedFile)) {
       valid = false;
     } else {
       clearError('err-rx-file', null);
@@ -179,7 +237,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (!valid) {
-      // Scroll to first error field
       const firstErr = form.querySelector(
         'input.error, textarea.error, .rx-upload-area.error-state'
       );
@@ -187,19 +244,37 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Simulate submission
-    submitBtn.disabled = true;
-    spinner.style.display = 'inline-block';
-    document.getElementById('rx-btn-text').textContent = 'Sending…';
+    setLoading(true);
 
-    setTimeout(() => {
+    try {
+      // 1. Upload prescription file to Firebase Storage
+      const storagePath = buildUniqueFilename(selectedFile);
+      const fileRef = ref(storage, storagePath);
+      await uploadBytes(fileRef, selectedFile);
+      const prescriptionImageUrl = await getDownloadURL(fileRef);
+
+      // 2. Save order to Firestore
+      await addDoc(collection(db, 'prescriptionOrders'), {
+        name: document.getElementById('rx-name').value.trim(),
+        phone: document.getElementById('rx-phone').value.trim(),
+        address: document.getElementById('rx-address').value.trim(),
+        notes: document.getElementById('rx-notes').value.trim() || '',
+        prescriptionImageUrl,
+        timestamp: serverTimestamp(),
+        status: 'pending',
+      });
+
       form.style.display = 'none';
       successMsg.style.display = 'block';
       successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      submitBtn.disabled = false;
-      spinner.style.display = 'none';
-      document.getElementById('rx-btn-text').textContent = 'Send Prescription & Order';
-    }, 1400);
+    } catch (err) {
+      console.error('Prescription submission failed:', err);
+      showSubmitError(
+        'Something went wrong while submitting your prescription. Please try again or call us.'
+      );
+    } finally {
+      setLoading(false);
+    }
   });
 
   // ── Reset ───────────────────────────────────────────────
@@ -207,6 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resetBtn.addEventListener('click', () => {
       form.reset();
       clearFile();
+      hideSubmitError();
       form.querySelectorAll('input, textarea').forEach(el => {
         el.classList.remove('error', 'valid');
       });

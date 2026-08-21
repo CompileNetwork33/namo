@@ -254,7 +254,14 @@
 }
 .ws-textarea-wrap textarea:focus { border-color: var(--primary); background: var(--card-bg); box-shadow: 0 0 0 3px rgba(15,118,110,.15); }
 
-.ws-error { font-size: .78rem; color: var(--error); font-weight: 500; min-height: 1em; }
+.ws-error {
+  display: none;
+  font-size: .78rem;
+  color: var(--error);
+  font-weight: 500;
+  min-height: 1em;
+}
+.ws-error.visible { display: block; }
 
 .ws-submit-btn {
   width: 100%; padding: .9rem 2rem; background: var(--primary); color: white;
@@ -264,6 +271,11 @@
 }
 .ws-submit-btn i { color: white; }
 .ws-submit-btn:hover { transform: translateY(-2px); background: var(--primary-hover); }
+.ws-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
 
 @media (max-width: 900px) {
   .ws-intro-grid, .ws-form-layout { grid-template-columns: 1fr; }

@@ -183,6 +183,22 @@
 .rx-remove-file { background: none; border: none; color: var(--error); cursor: pointer; font-size: 1.1rem; }
 .rx-remove-file:hover { color: var(--error); transform: scale(1.1); }
 
+/* Field errors */
+.rx-error {
+  display: none;
+  font-size: .78rem;
+  color: var(--error);
+  font-weight: 500;
+}
+.rx-error.visible { display: block; }
+
+.rx-submit-btn:disabled,
+.btn-rx-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
 /* Submit */
 .btn-rx-submit {
   width: 100%; padding: .9rem 2rem; background: var(--primary); color: white;
