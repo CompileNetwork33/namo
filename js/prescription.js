@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!form) return;
 
   // Replace with your WhatsApp business number (country code + number, no + or spaces)
-  const WHATSAPP_NUMBER = '91XXXXXXXXXX';
+  const WHATSAPP_NUMBER = '919501743529';
 
   // ── Validation helpers ──────────────────────────────────
   function showError(errId, fieldEl) {
