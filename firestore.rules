@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper validation functions
+    function isString(field) {
+      return field in request.resource.data && request.resource.data[field] is string;
+    }
+
+    function isNonEmptyString(field) {
+      return isString(field) && request.resource.data[field].size() > 0;
+    }
+
+    // 1. Prescription Orders Collection
+    match /prescriptionOrders/{orderId} {
+      // Allow public creation only with valid, non-empty fields
+      allow create: if isNonEmptyString('name')
+                    && isNonEmptyString('phone')
+                    && isNonEmptyString('address')
+                    && isString('notes');
+      
+      // Block all client-side reading, updating, and deleting to protect customer data
+      allow read, update, delete: if false;
+    }
+
+    // 2. Contact Messages Collection
+    match /contactMessages/{messageId} {
+      // Allow public creation only with valid, non-empty fields
+      allow create: if isNonEmptyString('name')
+                    && isNonEmptyString('email')
+                    && isNonEmptyString('message')
+                    && isString('phone');
+      
+      // Block all client-side reading, updating, and deleting to protect customer data
+      allow read, update, delete: if false;
+    }
+
+    // 3. Wholesale Enquiries Collection
+    match /wholesaleEnquiries/{enquiryId} {
+      // Allow public creation only with valid, non-empty fields
+      allow create: if isNonEmptyString('businessName')
+                    && isNonEmptyString('contactPerson')
+                    && isNonEmptyString('phone')
+                    && isNonEmptyString('email')
+                    && isNonEmptyString('gstLicenseNumber')
+                    && isNonEmptyString('productsInterested')
+                    && isNonEmptyString('orderVolume');
+      
+      // Block all client-side reading, updating, and deleting to protect customer data
+      allow read, update, delete: if false;
+    }
+
+    // Default deny for any other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
