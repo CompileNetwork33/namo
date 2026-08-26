@@ -15,7 +15,7 @@
   <div class="top-bar">
     <div class="container">
       <div class="top-bar-left">
-        <span><i class="fas fa-clock"></i> Mon–Sun: 9:30 AM – 8:30 PM</span>
+        <span><i class="fas fa-clock"></i> <span data-i18n="top_bar_timing">Mon–Sun: 9:30 AM – 8:30 PM</span></span>
       </div>
       <div class="top-bar-right">
         <a href="tel:+919501743529"><i class="fas fa-phone"></i> +91 9501743529</a>
@@ -31,24 +31,27 @@
         <a href="index.html" class="logo">
           <div class="logo-icon"><i class="fas fa-plus-square"></i></div>
           <div class="logo-text">
-            <div class="name">Namo Medical</div>
-            <div class="tagline">Your Health, Our Priority</div>
+            <div class="name" data-i18n="logo_name">Namo Medical</div>
+            <div class="tagline" data-i18n="logo_tagline">Your Health, Our Priority</div>
           </div>
         </a>
 
         <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="products.html" class="active">Products</a></li>
-          <li><a href="wholesale.html">Wholesale</a></li>
-          <li><a href="prescription.html">Prescription</a></li>
-          <li><a href="health-tips.html">Health Tips</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" data-i18n="nav_about">About</a></li>
+          <li><a href="products.html" class="active" data-i18n="nav_products">Products</a></li>
+          <li><a href="wholesale.html" data-i18n="nav_wholesale">Wholesale</a></li>
+          <li><a href="prescription.html" data-i18n="nav_prescription">Prescription</a></li>
+          <li><a href="health-tips.html" data-i18n="nav_health_tips">Health Tips</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
+          <button type="button" class="btn-lang is-en" aria-label="Switch Language">
+            <span class="lang-en">EN</span><span class="lang-sep">|</span><span class="lang-hi">हिं</span>
+          </button>
           <a href="tel:+919501743529" class="btn-call">
-            <i class="fas fa-phone-alt"></i> Call Now
+            <i class="fas fa-phone-alt"></i> <span data-i18n="nav_call_now">Call Now</span>
           </a>
           <button class="hamburger" id="hamburger" aria-label="Open menu">
             <span></span><span></span><span></span>
@@ -61,27 +64,27 @@
   <!-- ===== MOBILE NAV ===== -->
   <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
     <button class="mobile-nav-close" id="mobile-close"><i class="fas fa-times"></i></button>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="wholesale.html">Wholesale</a>
-    <a href="prescription.html">Prescription Upload</a>
-    <a href="health-tips.html">Health Tips</a>
-    <a href="contact.html">Contact</a>
-    <a href="tel:+919501743529" class="btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+    <a href="products.html" class="active" data-i18n="nav_products">Products</a>
+    <a href="wholesale.html" data-i18n="nav_wholesale">Wholesale</a>
+    <a href="prescription.html" data-i18n="nav_prescription_upload">Prescription Upload</a>
+    <a href="health-tips.html" data-i18n="nav_health_tips">Health Tips</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    <a href="tel:+919501743529" class="btn-call"><i class="fas fa-phone-alt"></i> <span data-i18n="nav_call_now">Call Now</span></a>
   </div>
 
   <!-- ===== PAGE HERO ===== -->
   <section class="page-hero">
     <div class="container">
       <div class="page-hero-content">
-        <span class="badge-pill"><i class="fas fa-pills"></i> &nbsp;5000+ Products</span>
-        <h1>Our Products &amp; Services</h1>
-        <p>Genuine medicines and healthcare essentials — organised by category for easy browsing.</p>
+        <span class="badge-pill"><i class="fas fa-pills"></i> &nbsp;<span data-i18n="products_hero_badge">5000+ Products</span></span>
+        <h1 data-i18n="products_hero_title">Our Products &amp; Services</h1>
+        <p data-i18n="products_hero_desc">Genuine medicines and healthcare essentials — organised by category for easy browsing.</p>
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
+          <a href="index.html" data-i18n="breadcrumb_home">Home</a>
           <i class="fas fa-chevron-right"></i>
-          <span>Products</span>
+          <span data-i18n="breadcrumb_products">Products</span>
         </nav>
       </div>
     </div>
@@ -90,9 +93,9 @@
   <!-- ===== PRODUCT CATEGORIES ===== -->
   <section class="products-page-section">
     <div class="container">
-      <span class="badge-pill" style="display:block;width:fit-content;margin:0 auto 1rem;">Browse Categories</span>
-      <h2 class="section-title">Shop by Product Category</h2>
-      <p class="section-subtitle">From prescription medicines to surgical supplies — everything you need under one roof.</p>
+      <span class="badge-pill" style="display:block;width:fit-content;margin:0 auto 1rem;" data-i18n="cat_badge">Browse Categories</span>
+      <h2 class="section-title" data-i18n="products_section_title">Shop by Product Category</h2>
+      <p class="section-subtitle" data-i18n="products_section_subtitle">From prescription medicines to surgical supplies — everything you need under one roof.</p>
 
       <div class="products-grid">
 
@@ -103,11 +106,11 @@
           </div>
           <div class="product-card-body">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.45rem;flex-wrap:wrap;gap:.4rem;">
-              <h3>Medicines</h3>
-              <span class="status-badge in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+              <h3 data-i18n="cat_medicines">Medicines</h3>
+              <span class="status-badge in-stock"><i class="fas fa-check-circle"></i> <span data-i18n="badge_in_stock">In Stock</span></span>
             </div>
-            <p>Prescription &amp; OTC drugs, generics, and branded medicines from leading pharmaceutical companies.</p>
-            <a href="prescription.html" class="btn-details">Order Medicine <i class="fas fa-arrow-right"></i></a>
+            <p data-i18n="cat_medicines_desc">Prescription &amp; OTC drugs, generics, and branded medicines from leading pharmaceutical companies.</p>
+            <a href="prescription.html" class="btn-details"><span data-i18n="btn_order_medicine">Order Medicine</span> <i class="fas fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -118,11 +121,11 @@
           </div>
           <div class="product-card-body">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.45rem;flex-wrap:wrap;gap:.4rem;">
-              <h3>Health Devices</h3>
-              <span class="status-badge in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+              <h3 data-i18n="cat_devices">Health Devices</h3>
+              <span class="status-badge in-stock"><i class="fas fa-check-circle"></i> <span data-i18n="badge_in_stock">In Stock</span></span>
             </div>
-            <p>BP monitors, glucometers, pulse oximeters, thermometers, nebulisers, and more home-care devices.</p>
-            <a href="contact.html" class="btn-details">Inquire Now <i class="fas fa-arrow-right"></i></a>
+            <p data-i18n="cat_devices_desc">BP monitors, glucometers, pulse oximeters, thermometers, nebulisers, and more home-care devices.</p>
+            <a href="contact.html" class="btn-details"><span data-i18n="btn_inquire_now">Inquire Now</span> <i class="fas fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -133,11 +136,11 @@
           </div>
           <div class="product-card-body">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.45rem;flex-wrap:wrap;gap:.4rem;">
-              <h3>First Aid</h3>
-              <span class="status-badge in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+              <h3 data-i18n="cat_first_aid">First Aid</h3>
+              <span class="status-badge in-stock"><i class="fas fa-check-circle"></i> <span data-i18n="badge_in_stock">In Stock</span></span>
             </div>
-            <p>Complete first aid kits, bandages, antiseptics, gauze, and wound-care essentials for every home.</p>
-            <a href="contact.html" class="btn-details">Order Supplies <i class="fas fa-arrow-right"></i></a>
+            <p data-i18n="cat_first_aid_desc">Complete first aid kits, bandages, antiseptics, gauze, and wound-care essentials for every home.</p>
+            <a href="contact.html" class="btn-details"><span data-i18n="btn_order_supplies">Order Supplies</span> <i class="fas fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -148,11 +151,11 @@
           </div>
           <div class="product-card-body">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.45rem;flex-wrap:wrap;gap:.4rem;">
-              <h3>Baby Care</h3>
-              <span class="status-badge in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+              <h3 data-i18n="cat_baby_care">Baby Care</h3>
+              <span class="status-badge in-stock"><i class="fas fa-check-circle"></i> <span data-i18n="badge_in_stock">In Stock</span></span>
             </div>
-            <p>Trusted baby nutrition, diapers, skin care, oral care, and health products for infants and toddlers.</p>
-            <a href="contact.html" class="btn-details">View Items <i class="fas fa-arrow-right"></i></a>
+            <p data-i18n="cat_baby_care_desc">Trusted baby nutrition, diapers, skin care, oral care, and health products for infants and toddlers.</p>
+            <a href="contact.html" class="btn-details"><span data-i18n="btn_view_items">View Items</span> <i class="fas fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -163,11 +166,11 @@
           </div>
           <div class="product-card-body">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.45rem;flex-wrap:wrap;gap:.4rem;">
-              <h3>Personal Care</h3>
-              <span class="status-badge in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+              <h3 data-i18n="cat_personal_care">Personal Care</h3>
+              <span class="status-badge in-stock"><i class="fas fa-check-circle"></i> <span data-i18n="badge_in_stock">In Stock</span></span>
             </div>
-            <p>Skincare, hair care, hygiene, oral care, and daily wellness products for the whole family.</p>
-            <a href="contact.html" class="btn-details">Explore Range <i class="fas fa-arrow-right"></i></a>
+            <p data-i18n="cat_personal_care_desc">Skincare, hair care, hygiene, oral care, and daily wellness products for the whole family.</p>
+            <a href="contact.html" class="btn-details"><span data-i18n="btn_explore_range">Explore Range</span> <i class="fas fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -178,11 +181,11 @@
           </div>
           <div class="product-card-body">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.45rem;flex-wrap:wrap;gap:.4rem;">
-              <h3>Surgical Items</h3>
-              <span class="status-badge confirmed"><i class="fas fa-shield-alt"></i> Wholesale Ready</span>
+              <h3 data-i18n="cat_surgical">Surgical Items</h3>
+              <span class="status-badge confirmed"><i class="fas fa-shield-alt"></i> <span data-i18n="badge_wholesale_ready">Wholesale Ready</span></span>
             </div>
-            <p>Gloves, syringes, IV sets, masks, dressings, and a full range of surgical and clinical supplies.</p>
-            <a href="wholesale.html" class="btn-details">Wholesale Quote <i class="fas fa-arrow-right"></i></a>
+            <p data-i18n="cat_surgical_desc">Gloves, syringes, IV sets, masks, dressings, and a full range of surgical and clinical supplies.</p>
+            <a href="wholesale.html" class="btn-details"><span data-i18n="btn_wholesale_quote">Wholesale Quote</span> <i class="fas fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -193,11 +196,11 @@
   <!-- ===== CTA STRIP ===== -->
   <section class="cta-strip">
     <div class="container">
-      <h2>Need Help Finding a Product?</h2>
-      <p>Our pharmacist team can guide you to the right medicine or device. Call us or visit the store for personalised assistance.</p>
+      <h2 data-i18n="cta_help_title">Need Help Finding a Product?</h2>
+      <p data-i18n="cta_help_desc">Our pharmacist team can guide you to the right medicine or device. Call us or visit the store for personalised assistance.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="tel:+919501743529" class="btn-primary"><i class="fas fa-phone-alt"></i> Call for Assistance</a>
-        <a href="mailto:info@namomedical.com" class="btn-secondary" style="color:white;"><i class="fas fa-envelope"></i> Email Us</a>
+        <a href="tel:+919501743529" class="btn-primary"><i class="fas fa-phone-alt"></i> <span data-i18n="btn_call_assistance">Call for Assistance</span></a>
+        <a href="mailto:info@namomedical.com" class="btn-secondary" style="color:white;"><i class="fas fa-envelope"></i> <span data-i18n="btn_email_us">Email Us</span></a>
       </div>
     </div>
   </section>
@@ -208,51 +211,51 @@
       <div class="footer-grid">
 
         <div class="footer-brand">
-          <div class="logo">
+          <a href="index.html" class="logo">
             <div class="logo-icon"><i class="fas fa-plus-square"></i></div>
             <div class="logo-text">
-              <div class="name">Namo Medical</div>
-              <div class="tagline">Your Health, Our Priority</div>
+              <div class="name" data-i18n="logo_name">Namo Medical</div>
+              <div class="tagline" data-i18n="logo_tagline">Your Health, Our Priority</div>
             </div>
-          </div>
-          <p class="footer-desc">Serving the community with genuine medicines and healthcare products since 2009. Your trusted partner for retail and wholesale pharmaceutical needs.</p>
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">Serving the community with genuine medicines and healthcare products since 2009. Your trusted partner for retail and wholesale pharmaceutical needs.</p>
           <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="javascript:void(0)" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="javascript:void(0)" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://wa.me/919501743529" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="javascript:void(0)" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
 
         <div class="footer-col">
-          <h4>Quick Links</h4>
+          <h4 data-i18n="footer_quick_links">Quick Links</h4>
           <ul class="footer-links">
-            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Products</a></li>
-            <li><a href="wholesale.html"><i class="fas fa-chevron-right"></i> Wholesale</a></li>
-            <li><a href="prescription.html"><i class="fas fa-chevron-right"></i> Prescription Upload</a></li>
-            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> Health Tips</a></li>
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_home">Home</span></a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_about">About Us</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_products">Products</span></a></li>
+            <li><a href="wholesale.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_wholesale">Wholesale</span></a></li>
+            <li><a href="prescription.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_prescription_upload">Prescription Upload</span></a></li>
+            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_health_tips">Health Tips</span></a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Categories</h4>
+          <h4 data-i18n="footer_categories">Categories</h4>
           <ul class="footer-links">
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Medicines</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Health Devices</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> First Aid</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Baby Care</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Personal Care</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Surgical Items</a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_medicines">Medicines</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_devices">Health Devices</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_first_aid">First Aid</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_baby_care">Baby Care</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_personal_care">Personal Care</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_surgical">Surgical Items</span></a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Contact Us</h4>
+          <h4 data-i18n="footer_contact">Contact Us</h4>
           <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span>Pritam Colony,<br />Fatehgarh Sahib, Punjab,<br />India</span>
+            <span data-i18n="info_address_val">Pritam Colony,<br />Fatehgarh Sahib, Punjab,<br />India</span>
           </div>
           <div class="contact-item">
             <i class="fas fa-phone-alt"></i>
@@ -264,19 +267,20 @@
           </div>
           <div class="contact-item">
             <i class="fas fa-clock"></i>
-            <span>Mon–Sun: 9:30 AM – 8:30 PM</span>
+            <span data-i18n="top_bar_timing">Mon–Sun: 9:30 AM – 8:30 PM</span>
           </div>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2025 Namo Medical Store. All rights reserved.</span>
-        <span>Designed with <i class="fas fa-heart" style="color:#f43f5e;"></i> for better health</span>
+        <span data-i18n="footer_rights">&copy; 2025 Namo Medical Store. All rights reserved.</span>
+        <span><span data-i18n="footer_designed">Designed for better health</span> <i class="fas fa-heart" style="color:#f43f5e;"></i></span>
       </div>
     </div>
   </footer>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
 </body>

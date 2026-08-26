@@ -191,6 +191,56 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .btn-call i { color: var(--white); }
 .btn-call:hover { transform: translateY(-2px); background: var(--secondary-hover); box-shadow: 0 6px 20px rgba(37,99,235,.35); }
 
+/* Language Switcher Toggle */
+.btn-lang {
+  background: var(--teal-light);
+  color: var(--navy);
+  border: 1.5px solid var(--primary-light);
+  padding: .45rem .85rem;
+  border-radius: 50px;
+  font-size: .85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  transition: all var(--transition);
+  user-select: none;
+  font-family: inherit;
+  box-shadow: 0 2px 6px rgba(15,118,110,.12);
+}
+.btn-lang:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15,118,110,.25);
+}
+.btn-lang .lang-en,
+.btn-lang .lang-hi {
+  transition: opacity .2s, font-weight .2s, color .2s;
+  opacity: 0.65;
+}
+.btn-lang.is-en .lang-en {
+  opacity: 1;
+  color: var(--primary);
+  font-weight: 800;
+}
+.btn-lang.is-hi .lang-hi {
+  opacity: 1;
+  color: var(--secondary);
+  font-weight: 800;
+}
+.btn-lang:hover .lang-en,
+.btn-lang:hover .lang-hi {
+  opacity: 1 !important;
+  color: var(--white) !important;
+}
+.btn-lang .lang-sep {
+  opacity: 0.4;
+  font-weight: 400;
+}
+
 /* Hamburger */
 .hamburger { display: none; flex-direction: column; gap: 5px; padding: .4rem; cursor: pointer; background: transparent; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-main); border-radius: 2px; transition: all var(--transition); }
@@ -335,6 +385,9 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
   background: var(--card-bg);
   cursor: pointer;
   position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 .category-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
 .category-img {

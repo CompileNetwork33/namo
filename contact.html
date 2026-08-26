@@ -16,7 +16,7 @@
   <div class="top-bar">
     <div class="container">
       <div class="top-bar-left">
-        <span><i class="fas fa-clock"></i> Mon–Sun: 9:30 AM – 8:30 PM</span>
+        <span><i class="fas fa-clock"></i> <span data-i18n="top_bar_timing">Mon–Sun: 9:30 AM – 8:30 PM</span></span>
       </div>
       <div class="top-bar-right">
         <a href="tel:+919501743529"><i class="fas fa-phone"></i> +91 9501743529</a>
@@ -32,24 +32,27 @@
         <a href="index.html" class="logo">
           <div class="logo-icon"><i class="fas fa-plus-square"></i></div>
           <div class="logo-text">
-            <div class="name">Namo Medical</div>
-            <div class="tagline">Your Health, Our Priority</div>
+            <div class="name" data-i18n="logo_name">Namo Medical</div>
+            <div class="tagline" data-i18n="logo_tagline">Your Health, Our Priority</div>
           </div>
         </a>
 
         <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="wholesale.html">Wholesale</a></li>
-          <li><a href="prescription.html">Prescription</a></li>
-          <li><a href="health-tips.html">Health Tips</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" data-i18n="nav_about">About</a></li>
+          <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+          <li><a href="wholesale.html" data-i18n="nav_wholesale">Wholesale</a></li>
+          <li><a href="prescription.html" data-i18n="nav_prescription">Prescription</a></li>
+          <li><a href="health-tips.html" data-i18n="nav_health_tips">Health Tips</a></li>
+          <li><a href="contact.html" class="active" data-i18n="nav_contact">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
+          <button type="button" class="btn-lang is-en" aria-label="Switch Language">
+            <span class="lang-en">EN</span><span class="lang-sep">|</span><span class="lang-hi">हिं</span>
+          </button>
           <a href="tel:+919501743529" class="btn-call">
-            <i class="fas fa-phone-alt"></i> Call Now
+            <i class="fas fa-phone-alt"></i> <span data-i18n="nav_call_now">Call Now</span>
           </a>
           <button class="hamburger" id="hamburger" aria-label="Open menu">
             <span></span><span></span><span></span>
@@ -62,27 +65,27 @@
   <!-- ===== MOBILE NAV ===== -->
   <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
     <button class="mobile-nav-close" id="mobile-close"><i class="fas fa-times"></i></button>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="wholesale.html">Wholesale</a>
-    <a href="prescription.html">Prescription Upload</a>
-    <a href="health-tips.html">Health Tips</a>
-    <a href="contact.html">Contact</a>
-    <a href="tel:+919501743529" class="btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+    <a href="products.html" data-i18n="nav_products">Products</a>
+    <a href="wholesale.html" data-i18n="nav_wholesale">Wholesale</a>
+    <a href="prescription.html" data-i18n="nav_prescription_upload">Prescription Upload</a>
+    <a href="health-tips.html" data-i18n="nav_health_tips">Health Tips</a>
+    <a href="contact.html" class="active" data-i18n="nav_contact">Contact</a>
+    <a href="tel:+919501743529" class="btn-call"><i class="fas fa-phone-alt"></i> <span data-i18n="nav_call_now">Call Now</span></a>
   </div>
 
   <!-- ===== PAGE HERO ===== -->
   <section class="page-hero">
     <div class="container">
       <div class="page-hero-content">
-        <span class="badge-pill"><i class="fas fa-headset"></i> &nbsp;We're Here for You</span>
-        <h1>Contact Namo Medical Store</h1>
-        <p>Reach out for medicines, prescriptions, or wholesale enquiries — we respond promptly.</p>
+        <span class="badge-pill"><i class="fas fa-headset"></i> &nbsp;<span data-i18n="contact_hero_badge">We're Here for You</span></span>
+        <h1 data-i18n="contact_hero_title">Contact Namo Medical Store</h1>
+        <p data-i18n="contact_hero_desc">Reach out for medicines, prescriptions, or wholesale enquiries — we respond promptly.</p>
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
+          <a href="index.html" data-i18n="breadcrumb_home">Home</a>
           <i class="fas fa-chevron-right"></i>
-          <span>Contact Us</span>
+          <span data-i18n="breadcrumb_contact">Contact Us</span>
         </nav>
       </div>
     </div>
@@ -98,7 +101,7 @@
             <i class="fas fa-phone-alt"></i>
           </div>
           <div class="qc-info">
-            <span class="qc-label">Call Us Directly</span>
+            <span class="qc-label" data-i18n="qc_call_label">Call Us Directly</span>
             <span class="qc-value">+91 95017 43529</span>
           </div>
           <i class="fas fa-arrow-right qc-arrow"></i>
@@ -109,7 +112,7 @@
             <i class="fas fa-envelope"></i>
           </div>
           <div class="qc-info">
-            <span class="qc-label">Email Us</span>
+            <span class="qc-label" data-i18n="qc_email_label">Email Us</span>
             <span class="qc-value">info@namomedical.com</span>
           </div>
           <i class="fas fa-arrow-right qc-arrow"></i>
@@ -120,8 +123,8 @@
             <i class="fab fa-whatsapp"></i>
           </div>
           <div class="qc-info">
-            <span class="qc-label">WhatsApp Us</span>
-            <span class="qc-value">Chat Instantly</span>
+            <span class="qc-label" data-i18n="qc_wa_label">WhatsApp Us</span>
+            <span class="qc-value" data-i18n="qc_wa_val">Chat Instantly</span>
           </div>
           <i class="fas fa-arrow-right qc-arrow"></i>
         </a>
@@ -139,15 +142,15 @@
         <div class="contact-form-col reveal">
           <div class="contact-form-card">
             <div class="form-header">
-              <span class="badge-pill">Send a Message</span>
-              <h2>We'd Love to Hear From You</h2>
-              <p>Fill out the form and our team will get back to you within a few hours.</p>
+              <span class="badge-pill" data-i18n="contact_form_badge">Send a Message</span>
+              <h2 data-i18n="contact_form_title">We'd Love to Hear From You</h2>
+              <p data-i18n="contact_form_desc">Fill out the form and our team will get back to you within a few hours.</p>
             </div>
 
             <form id="contact-form" class="contact-form" novalidate>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="contact-name">Full Name <span class="required">*</span></label>
+                  <label for="contact-name"><span data-i18n="contact_label_name">Full Name</span> <span class="required">*</span></label>
                   <div class="input-wrap">
                     <i class="fas fa-user"></i>
                     <input
@@ -157,13 +160,14 @@
                       placeholder="Your full name"
                       autocomplete="name"
                       required
+                      data-i18n-placeholder="contact_placeholder_name"
                     />
                   </div>
                   <span class="field-error" id="error-name"></span>
                 </div>
 
                 <div class="form-group">
-                  <label for="contact-email">Email Address <span class="required">*</span></label>
+                  <label for="contact-email"><span data-i18n="contact_label_email">Email Address</span> <span class="required">*</span></label>
                   <div class="input-wrap">
                     <i class="fas fa-envelope"></i>
                     <input
@@ -173,6 +177,7 @@
                       placeholder="you@example.com"
                       autocomplete="email"
                       required
+                      data-i18n-placeholder="contact_placeholder_email"
                     />
                   </div>
                   <span class="field-error" id="error-email"></span>
@@ -180,7 +185,7 @@
               </div>
 
               <div class="form-group">
-                <label for="contact-phone">Phone Number</label>
+                <label for="contact-phone" data-i18n="contact_label_phone">Phone Number</label>
                 <div class="input-wrap">
                   <i class="fas fa-phone-alt"></i>
                   <input
@@ -189,30 +194,31 @@
                     name="phone"
                     placeholder="+91 XXXXX XXXXX"
                     autocomplete="tel"
+                    data-i18n-placeholder="contact_placeholder_phone"
                   />
                 </div>
                 <span class="field-error" id="error-phone"></span>
               </div>
 
               <div class="form-group">
-                <label for="contact-subject">Subject</label>
+                <label for="contact-subject" data-i18n="contact_label_subject">Subject</label>
                 <div class="input-wrap select-wrap">
                   <i class="fas fa-tag"></i>
                   <select id="contact-subject" name="subject">
-                    <option value="" disabled selected>Select a topic…</option>
-                    <option value="medicine-enquiry">Medicine Enquiry</option>
-                    <option value="prescription">Prescription Upload Help</option>
-                    <option value="home-delivery">Home Delivery</option>
-                    <option value="wholesale">Wholesale / Business Enquiry</option>
-                    <option value="feedback">Feedback / Complaint</option>
-                    <option value="other">Other</option>
+                    <option value="" disabled selected data-i18n="contact_subj_default">Select a topic…</option>
+                    <option value="medicine-enquiry" data-i18n="contact_subj_med">Medicine Enquiry</option>
+                    <option value="prescription" data-i18n="contact_subj_rx">Prescription Upload Help</option>
+                    <option value="home-delivery" data-i18n="contact_subj_del">Home Delivery</option>
+                    <option value="wholesale" data-i18n="contact_subj_ws">Wholesale / Business Enquiry</option>
+                    <option value="feedback" data-i18n="contact_subj_fb">Feedback / Complaint</option>
+                    <option value="other" data-i18n="contact_subj_oth">Other</option>
                   </select>
                   <i class="fas fa-chevron-down select-chevron"></i>
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="contact-message">Message <span class="required">*</span></label>
+                <label for="contact-message"><span data-i18n="contact_label_message">Message</span> <span class="required">*</span></label>
                 <div class="textarea-wrap">
                   <textarea
                     id="contact-message"
@@ -220,6 +226,7 @@
                     rows="5"
                     placeholder="Tell us how we can help you…"
                     required
+                    data-i18n-placeholder="contact_placeholder_msg"
                   ></textarea>
                 </div>
                 <span class="field-error" id="error-message"></span>
@@ -229,7 +236,7 @@
 
               <button type="submit" class="btn-submit" id="contact-submit">
                 <span class="btn-submit-text">
-                  <i class="fas fa-paper-plane"></i> Send Message
+                  <i class="fas fa-paper-plane"></i> <span data-i18n="btn_send_message">Send Message</span>
                 </span>
                 <span class="btn-submit-loading" style="display:none;">
                   <i class="fas fa-circle-notch fa-spin"></i> Sending…
@@ -239,8 +246,8 @@
               <!-- Success state -->
               <div class="form-success" id="form-success" style="display:none;">
                 <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-                <h3>Message Sent!</h3>
-                <p>Thank you for reaching out. We'll get back to you within a few hours during store hours.</p>
+                <h3 data-i18n="contact_success_h3">Message Sent!</h3>
+                <p data-i18n="contact_success_p">Thank you for reaching out. We'll get back to you within a few hours during store hours.</p>
               </div>
             </form>
           </div>
@@ -251,7 +258,7 @@
 
           <!-- Store Details Card -->
           <div class="info-card reveal">
-            <h3 class="info-card-title"><i class="fas fa-store"></i> Store Information</h3>
+            <h3 class="info-card-title"><i class="fas fa-store"></i> <span data-i18n="info_store_title">Store Information</span></h3>
             <div class="info-list">
 
               <div class="info-item">
@@ -259,8 +266,8 @@
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <div class="info-text">
-                  <span class="info-label">Address</span>
-                  <span class="info-value">Pritam Colony,<br />Fatehgarh Sahib, Punjab,<br />India</span>
+                  <span class="info-label" data-i18n="info_address_label">Address</span>
+                  <span class="info-value" data-i18n="info_address_val">Pritam Colony,<br />Fatehgarh Sahib, Punjab,<br />India</span>
                 </div>
               </div>
 
@@ -269,7 +276,7 @@
                   <i class="fas fa-phone-alt"></i>
                 </div>
                 <div class="info-text">
-                  <span class="info-label">Phone</span>
+                  <span class="info-label" data-i18n="info_phone_label">Phone</span>
                   <a href="tel:+919501743529" class="info-value info-link">+91 95017 43529</a>
                 </div>
               </div>
@@ -279,7 +286,7 @@
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div class="info-text">
-                  <span class="info-label">Email</span>
+                  <span class="info-label" data-i18n="info_email_label">Email</span>
                   <a href="mailto:info@namomedical.com" class="info-value info-link">info@namomedical.com</a>
                 </div>
               </div>
@@ -289,9 +296,9 @@
                   <i class="fab fa-whatsapp"></i>
                 </div>
                 <div class="info-text">
-                  <span class="info-label">WhatsApp</span>
+                  <span class="info-label" data-i18n="info_wa_label">WhatsApp</span>
                   <a href="https://wa.me/919501743529" target="_blank" rel="noopener noreferrer" class="info-value info-link wa-link">
-                    Chat on WhatsApp <i class="fas fa-external-link-alt" style="font-size:.7em;"></i>
+                    <span data-i18n="info_wa_link">Chat on WhatsApp</span> <i class="fas fa-external-link-alt" style="font-size:.7em;"></i>
                   </a>
                 </div>
               </div>
@@ -301,19 +308,19 @@
 
           <!-- Store Timings Card -->
           <div class="info-card timings-card reveal">
-            <h3 class="info-card-title"><i class="fas fa-clock"></i> Store Timings</h3>
+            <h3 class="info-card-title"><i class="fas fa-clock"></i> <span data-i18n="info_timings_title">Store Timings</span></h3>
             <div class="timings-list">
               <div class="timing-row timing-open">
                 <div class="timing-day">
                   <i class="fas fa-circle timing-dot"></i>
-                  <span>Monday – Sunday</span>
+                  <span data-i18n="info_timing_days">Monday – Sunday</span>
                 </div>
-                <span class="timing-hours">9:30 AM – 8:30 PM</span>
+                <span class="timing-hours" data-i18n="info_timing_hours">9:30 AM – 8:30 PM</span>
               </div>
             </div>
             <div class="timing-note">
               <i class="fas fa-info-circle"></i>
-              Emergency medicines available after hours — call ahead.
+              <span data-i18n="info_emergency_note">Emergency medicines available after hours — call ahead.</span>
             </div>
           </div>
 
@@ -323,10 +330,10 @@
               <i class="fas fa-boxes"></i>
             </div>
             <div class="wholesale-note-body">
-              <h4>Wholesale or Business Enquiry?</h4>
-              <p>For bulk orders, institutional supply, or trade partnership requests, please visit our dedicated Wholesale page for faster handling.</p>
+              <h4 data-i18n="contact_ws_referral_title">Wholesale or Business Enquiry?</h4>
+              <p data-i18n="contact_ws_referral_desc">For bulk orders, institutional supply, or trade partnership requests, please visit our dedicated Wholesale page for faster handling.</p>
               <a href="wholesale.html" class="btn-wholesale-link">
-                <i class="fas fa-handshake"></i> Go to Wholesale Page
+                <i class="fas fa-handshake"></i> <span data-i18n="contact_ws_referral_btn">Go to Wholesale Page</span>
                 <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -341,9 +348,9 @@
   <section class="map-section">
     <div class="container">
       <div class="map-header reveal">
-        <span class="badge-pill"><i class="fas fa-map-marked-alt"></i> &nbsp;Find Us</span>
-        <h2 class="section-title">Visit Our Store</h2>
-        <p class="section-subtitle">We're conveniently located in Pritam Colony, Fatehgarh Sahib — easy to find, easy to reach.</p>
+        <span class="badge-pill"><i class="fas fa-map-marked-alt"></i> &nbsp;<span data-i18n="map_badge">Find Us</span></span>
+        <h2 class="section-title" data-i18n="map_title">Visit Our Store</h2>
+        <p class="section-subtitle" data-i18n="map_subtitle">We're conveniently located in Pritam Colony, Fatehgarh Sahib — easy to find, easy to reach.</p>
       </div>
     </div>
     <div class="map-frame-wrap reveal">
@@ -367,51 +374,51 @@
       <div class="footer-grid">
 
         <div class="footer-brand">
-          <div class="logo">
+          <a href="index.html" class="logo">
             <div class="logo-icon"><i class="fas fa-plus-square"></i></div>
             <div class="logo-text">
-              <div class="name">Namo Medical</div>
-              <div class="tagline">Your Health, Our Priority</div>
+              <div class="name" data-i18n="logo_name">Namo Medical</div>
+              <div class="tagline" data-i18n="logo_tagline">Your Health, Our Priority</div>
             </div>
-          </div>
-          <p class="footer-desc">Serving the community with genuine medicines and healthcare products since 2009. Your trusted partner for retail and wholesale pharmaceutical needs.</p>
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">Serving the community with genuine medicines and healthcare products since 2009. Your trusted partner for retail and wholesale pharmaceutical needs.</p>
           <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="javascript:void(0)" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="javascript:void(0)" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://wa.me/919501743529" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="javascript:void(0)" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
 
         <div class="footer-col">
-          <h4>Quick Links</h4>
+          <h4 data-i18n="footer_quick_links">Quick Links</h4>
           <ul class="footer-links">
-            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Products</a></li>
-            <li><a href="wholesale.html"><i class="fas fa-chevron-right"></i> Wholesale</a></li>
-            <li><a href="prescription.html"><i class="fas fa-chevron-right"></i> Prescription Upload</a></li>
-            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> Health Tips</a></li>
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_home">Home</span></a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_about">About Us</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_products">Products</span></a></li>
+            <li><a href="wholesale.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_wholesale">Wholesale</span></a></li>
+            <li><a href="prescription.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_prescription_upload">Prescription Upload</span></a></li>
+            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_health_tips">Health Tips</span></a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Categories</h4>
+          <h4 data-i18n="footer_categories">Categories</h4>
           <ul class="footer-links">
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Medicines</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Health Devices</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> First Aid</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Baby Care</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Personal Care</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Surgical Items</a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_medicines">Medicines</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_devices">Health Devices</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_first_aid">First Aid</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_baby_care">Baby Care</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_personal_care">Personal Care</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_surgical">Surgical Items</span></a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Contact Us</h4>
+          <h4 data-i18n="footer_contact">Contact Us</h4>
           <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span>Pritam Colony,<br />Fatehgarh Sahib, Punjab,<br />India</span>
+            <span data-i18n="info_address_val">Pritam Colony,<br />Fatehgarh Sahib, Punjab,<br />India</span>
           </div>
           <div class="contact-item">
             <i class="fas fa-phone-alt"></i>
@@ -423,19 +430,20 @@
           </div>
           <div class="contact-item">
             <i class="fas fa-clock"></i>
-            <span>Mon–Sun: 9:30 AM – 8:30 PM</span>
+            <span data-i18n="top_bar_timing">Mon–Sun: 9:30 AM – 8:30 PM</span>
           </div>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2025 Namo Medical Store. All rights reserved.</span>
-        <span>Designed with <i class="fas fa-heart" style="color:#f43f5e;"></i> for better health</span>
+        <span data-i18n="footer_rights">&copy; 2025 Namo Medical Store. All rights reserved.</span>
+        <span><span data-i18n="footer_designed">Designed for better health</span> <i class="fas fa-heart" style="color:#f43f5e;"></i></span>
       </div>
     </div>
   </footer>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
   <script type="module" src="js/contact.js"></script>

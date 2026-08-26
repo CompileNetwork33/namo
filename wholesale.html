@@ -16,7 +16,7 @@
   <div class="top-bar">
     <div class="container">
       <div class="top-bar-left">
-        <span><i class="fas fa-clock"></i> Mon–Sun: 9:30 AM – 8:30 PM</span>
+        <span><i class="fas fa-clock"></i> <span data-i18n="top_bar_timing">Mon–Sun: 9:30 AM – 8:30 PM</span></span>
       </div>
       <div class="top-bar-right">
         <a href="tel:+919501743529"><i class="fas fa-phone"></i> +91 9501743529</a>
@@ -32,24 +32,27 @@
         <a href="index.html" class="logo">
           <div class="logo-icon"><i class="fas fa-plus-square"></i></div>
           <div class="logo-text">
-            <div class="name">Namo Medical</div>
-            <div class="tagline">Your Health, Our Priority</div>
+            <div class="name" data-i18n="logo_name">Namo Medical</div>
+            <div class="tagline" data-i18n="logo_tagline">Your Health, Our Priority</div>
           </div>
         </a>
 
         <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="wholesale.html" class="active">Wholesale</a></li>
-          <li><a href="prescription.html">Prescription</a></li>
-          <li><a href="health-tips.html">Health Tips</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" data-i18n="nav_about">About</a></li>
+          <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+          <li><a href="wholesale.html" class="active" data-i18n="nav_wholesale">Wholesale</a></li>
+          <li><a href="prescription.html" data-i18n="nav_prescription">Prescription</a></li>
+          <li><a href="health-tips.html" data-i18n="nav_health_tips">Health Tips</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
+          <button type="button" class="btn-lang is-en" aria-label="Switch Language">
+            <span class="lang-en">EN</span><span class="lang-sep">|</span><span class="lang-hi">हिं</span>
+          </button>
           <a href="tel:+919501743529" class="btn-call">
-            <i class="fas fa-phone-alt"></i> Call Now
+            <i class="fas fa-phone-alt"></i> <span data-i18n="nav_call_now">Call Now</span>
           </a>
           <button class="hamburger" id="hamburger" aria-label="Open menu">
             <span></span><span></span><span></span>
@@ -62,27 +65,27 @@
   <!-- ===== MOBILE NAV ===== -->
   <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
     <button class="mobile-nav-close" id="mobile-close"><i class="fas fa-times"></i></button>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="wholesale.html">Wholesale</a>
-    <a href="prescription.html">Prescription Upload</a>
-    <a href="health-tips.html">Health Tips</a>
-    <a href="contact.html">Contact</a>
-    <a href="tel:+919501743529" class="btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+    <a href="products.html" data-i18n="nav_products">Products</a>
+    <a href="wholesale.html" class="active" data-i18n="nav_wholesale">Wholesale</a>
+    <a href="prescription.html" data-i18n="nav_prescription_upload">Prescription Upload</a>
+    <a href="health-tips.html" data-i18n="nav_health_tips">Health Tips</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    <a href="tel:+919501743529" class="btn-call"><i class="fas fa-phone-alt"></i> <span data-i18n="nav_call_now">Call Now</span></a>
   </div>
 
   <!-- ===== PAGE HERO ===== -->
   <section class="page-hero">
     <div class="container">
       <div class="page-hero-content">
-        <span class="badge-pill"><i class="fas fa-boxes"></i> &nbsp;Bulk Supply</span>
-        <h1>Wholesale &amp; Bulk Orders</h1>
-        <p>Your trusted partner for genuine medicines in bulk â€” serving institutions across the region.</p>
+        <span class="badge-pill"><i class="fas fa-boxes"></i> &nbsp;<span data-i18n="ws_hero_badge">Bulk Supply</span></span>
+        <h1 data-i18n="ws_hero_title">Wholesale &amp; Bulk Orders</h1>
+        <p data-i18n="ws_hero_desc">Your trusted partner for genuine medicines in bulk — serving institutions across the region.</p>
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
+          <a href="index.html" data-i18n="breadcrumb_home">Home</a>
           <i class="fas fa-chevron-right"></i>
-          <span>Wholesale</span>
+          <span data-i18n="breadcrumb_wholesale">Wholesale</span>
         </nav>
       </div>
     </div>
@@ -93,24 +96,24 @@
     <div class="container">
       <div class="ws-intro-grid">
         <div class="ws-intro-text reveal">
-          <span class="badge-pill">Bulk Supply</span>
-          <h2>Supplying Genuine Medicines to Healthcare Institutions</h2>
-          <p>
+          <span class="badge-pill" data-i18n="ws_intro_badge">Bulk Supply</span>
+          <h2 data-i18n="ws_intro_title">Supplying Genuine Medicines to Healthcare Institutions</h2>
+          <p data-i18n="ws_intro_p1">
             We supply genuine medicines in bulk to clinics, pharmacies, and healthcare institutions
-            across <strong>Fatehgarh Sahib &amp; Punjab Region</strong> at competitive wholesale prices.
+            across Fatehgarh Sahib &amp; Punjab Region at competitive wholesale prices.
             With over 15 years of experience and a licensed distribution network, Namo Medical Store
             is a trusted name in institutional medicine procurement.
           </p>
-          <p>
+          <p data-i18n="ws_intro_p2">
             Whether you run a busy clinic, a multi-specialty hospital, a nursing home, or a retail
             pharmacy, we handle your bulk requirements with speed, reliability, and zero compromise
             on authenticity.
           </p>
           <div class="ws-intro-badges">
-            <div class="ws-badge-item"><i class="fas fa-check-circle"></i> 5,000+ Products</div>
-            <div class="ws-badge-item"><i class="fas fa-check-circle"></i> Licensed Distributor</div>
-            <div class="ws-badge-item"><i class="fas fa-check-circle"></i> 24-hr Dispatch</div>
-            <div class="ws-badge-item"><i class="fas fa-check-circle"></i> GST Invoicing</div>
+            <div class="ws-badge-item"><i class="fas fa-check-circle"></i> <span data-i18n="story_h3">5,000+ Products</span></div>
+            <div class="ws-badge-item"><i class="fas fa-check-circle"></i> <span data-i18n="story_h2">Licensed Distributor</span></div>
+            <div class="ws-badge-item"><i class="fas fa-check-circle"></i> <span data-i18n="why_card_3_title">24-hr Dispatch</span></div>
+            <div class="ws-badge-item"><i class="fas fa-check-circle"></i> <span data-i18n="lic_3">GST Invoicing</span></div>
           </div>
         </div>
         <div class="ws-intro-stats reveal">
@@ -119,28 +122,28 @@
               <i class="fas fa-hospital"></i>
             </div>
             <div class="ws-stat-number">200+</div>
-            <div class="ws-stat-label">Institutional Partners</div>
+            <div class="ws-stat-label" data-i18n="ws_stat_partners">Institutional Partners</div>
           </div>
           <div class="ws-stat-card">
             <div class="ws-stat-icon" style="background:var(--green-light);color:var(--green-dark);">
               <i class="fas fa-box-open"></i>
             </div>
             <div class="ws-stat-number">5000+</div>
-            <div class="ws-stat-label">Products in Stock</div>
+            <div class="ws-stat-label" data-i18n="ws_stat_stock">Products in Stock</div>
           </div>
           <div class="ws-stat-card">
             <div class="ws-stat-icon" style="background:#fef3c7;color:#d97706;">
               <i class="fas fa-truck-fast"></i>
             </div>
             <div class="ws-stat-number">24hr</div>
-            <div class="ws-stat-label">Dispatch Time</div>
+            <div class="ws-stat-label" data-i18n="ws_stat_dispatch">Dispatch Time</div>
           </div>
           <div class="ws-stat-card">
             <div class="ws-stat-icon" style="background:#ede9fe;color:#7c3aed;">
               <i class="fas fa-award"></i>
             </div>
             <div class="ws-stat-number">15+</div>
-            <div class="ws-stat-label">Years Experience</div>
+            <div class="ws-stat-label" data-i18n="ws_stat_exp">Years Experience</div>
           </div>
         </div>
       </div>
@@ -150,29 +153,29 @@
   <!-- ===== WHO WE SERVE ===== -->
   <section class="ws-serve-section">
     <div class="container">
-      <span class="badge-pill" style="display:block;width:fit-content;margin:0 auto 1rem;">Who We Serve</span>
-      <h2 class="section-title">Institutions We Supply To</h2>
-      <p class="section-subtitle">From single-doctor clinics to large hospitals â€” we cater to every healthcare setup.</p>
+      <span class="badge-pill" style="display:block;width:fit-content;margin:0 auto 1rem;" data-i18n="ws_serve_badge">Who We Serve</span>
+      <h2 class="section-title" data-i18n="ws_serve_title">Institutions We Supply To</h2>
+      <p class="section-subtitle" data-i18n="ws_serve_subtitle">From single-doctor clinics to large hospitals — we cater to every healthcare setup.</p>
       <div class="ws-serve-grid">
         <div class="ws-serve-card reveal">
           <div class="ws-serve-icon"><i class="fas fa-clinic-medical"></i></div>
-          <h3>Clinics</h3>
-          <p>General practitioners, specialist clinics, and polyclinics needing regular medicine stock.</p>
+          <h3 data-i18n="ws_serve_clinics">Clinics</h3>
+          <p data-i18n="ws_serve_clinics_desc">General practitioners, specialist clinics, and polyclinics needing regular medicine stock.</p>
         </div>
         <div class="ws-serve-card reveal">
           <div class="ws-serve-icon"><i class="fas fa-pills"></i></div>
-          <h3>Pharmacies</h3>
-          <p>Retail pharmacies and drug stores looking for reliable wholesale sourcing at better margins.</p>
+          <h3 data-i18n="ws_serve_pharmacies">Pharmacies</h3>
+          <p data-i18n="ws_serve_pharmacies_desc">Retail pharmacies and drug stores looking for reliable wholesale sourcing at better margins.</p>
         </div>
         <div class="ws-serve-card reveal">
           <div class="ws-serve-icon"><i class="fas fa-hospital-alt"></i></div>
-          <h3>Hospitals</h3>
-          <p>Multi-specialty hospitals and surgical centres requiring high-volume, time-sensitive supply.</p>
+          <h3 data-i18n="ws_serve_hospitals">Hospitals</h3>
+          <p data-i18n="ws_serve_hospitals_desc">Multi-specialty hospitals and surgical centres requiring high-volume, time-sensitive supply.</p>
         </div>
         <div class="ws-serve-card reveal">
           <div class="ws-serve-icon"><i class="fas fa-house-medical"></i></div>
-          <h3>Nursing Homes</h3>
-          <p>Long-term care and nursing facilities requiring consistent, cost-effective medicine supply.</p>
+          <h3 data-i18n="ws_serve_nursing">Nursing Homes</h3>
+          <p data-i18n="ws_serve_nursing_desc">Long-term care and nursing facilities requiring consistent, cost-effective medicine supply.</p>
         </div>
       </div>
     </div>
@@ -181,33 +184,33 @@
   <!-- ===== WHY PARTNER WITH US ===== -->
   <section class="ws-why-section">
     <div class="container">
-      <span class="badge-pill" style="display:block;width:fit-content;margin:0 auto 1rem;">Why Partner With Us</span>
-      <h2 class="section-title">Four Reasons to Choose Namo Medical</h2>
-      <p class="section-subtitle">Built for healthcare businesses that cannot afford to compromise.</p>
+      <span class="badge-pill" style="display:block;width:fit-content;margin:0 auto 1rem;" data-i18n="ws_why_badge">Why Partner With Us</span>
+      <h2 class="section-title" data-i18n="ws_why_title">Four Reasons to Choose Namo Medical</h2>
+      <p class="section-subtitle" data-i18n="ws_why_subtitle">Built for healthcare businesses that cannot afford to compromise.</p>
       <div class="why-grid">
 
         <div class="why-card reveal">
           <div class="why-icon-wrap"><i class="fas fa-tags"></i></div>
-          <h3>Competitive Pricing</h3>
-          <p>Transparent wholesale pricing with volume-based discounts. No hidden costs, no surprise markups â€” just honest rates that improve your margins.</p>
+          <h3 data-i18n="ws_why_1_title">Competitive Pricing</h3>
+          <p data-i18n="why_card_pricing_desc">Transparent wholesale pricing with volume-based discounts. No hidden costs, no surprise markups — just honest rates that improve your margins.</p>
         </div>
 
         <div class="why-card reveal">
           <div class="why-icon-wrap"><i class="fas fa-th-large"></i></div>
-          <h3>Wide Product Range</h3>
-          <p>Over 5,000 SKUs across prescription medicines, OTC drugs, surgical items, IV fluids, health devices, and more â€” all under one roof.</p>
+          <h3 data-i18n="ws_why_2_title">Wide Product Range</h3>
+          <p data-i18n="why_card_range_desc">Over 5,000 SKUs across prescription medicines, OTC drugs, surgical items, IV fluids, health devices, and more — all under one roof.</p>
         </div>
 
         <div class="why-card reveal">
           <div class="why-icon-wrap"><i class="fas fa-truck-fast"></i></div>
-          <h3>Reliable Supply Chain</h3>
-          <p>Sourced directly from manufacturer-authorised distributors with guaranteed authenticity. Orders dispatched within 24 hours with proper cold-chain maintenance.</p>
+          <h3 data-i18n="ws_why_3_title">Reliable Supply Chain</h3>
+          <p data-i18n="why_card_chain_desc">Sourced directly from manufacturer-authorised distributors with guaranteed authenticity. Orders dispatched within 24 hours with proper cold-chain maintenance.</p>
         </div>
 
         <div class="why-card reveal">
           <div class="why-icon-wrap"><i class="fas fa-certificate"></i></div>
-          <h3>Licensed Distributor</h3>
-          <p>Fully licensed under Drug Control Authority with Form 20B &amp; 21B wholesale licences, GST registered, and FSSAI compliant. Complete documentation provided.</p>
+          <h3 data-i18n="ws_why_4_title">Licensed Distributor</h3>
+          <p data-i18n="why_card_licensed_desc">Fully licensed under Drug Control Authority with Form 20B &amp; 21B wholesale licences, GST registered, and FSSAI compliant. Complete documentation provided.</p>
         </div>
 
       </div>
@@ -217,29 +220,29 @@
   <!-- ===== HOW IT WORKS ===== -->
   <section class="ws-process-section">
     <div class="container">
-      <span class="badge-pill" style="display:block;width:fit-content;margin:0 auto 1rem;">Simple Process</span>
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-subtitle">Getting started with wholesale orders is easy â€” just three steps.</p>
+      <span class="badge-pill" style="display:block;width:fit-content;margin:0 auto 1rem;" data-i18n="ws_proc_badge">Simple Process</span>
+      <h2 class="section-title" data-i18n="ws_proc_title">How It Works</h2>
+      <p class="section-subtitle" data-i18n="ws_proc_subtitle">Getting started with wholesale orders is easy — just three steps.</p>
       <div class="ws-process-steps">
         <div class="ws-step reveal">
           <div class="ws-step-num">01</div>
           <div class="ws-step-icon"><i class="fas fa-file-alt"></i></div>
-          <h3>Submit Enquiry</h3>
-          <p>Fill out the business enquiry form below with your requirements and volume estimate.</p>
+          <h3 data-i18n="ws_step1_title">Submit Enquiry</h3>
+          <p data-i18n="ws_step1_desc">Fill out the business enquiry form below with your requirements and volume estimate.</p>
         </div>
         <div class="ws-step-arrow"><i class="fas fa-chevron-right"></i></div>
         <div class="ws-step reveal">
           <div class="ws-step-num">02</div>
           <div class="ws-step-icon"><i class="fas fa-handshake"></i></div>
-          <h3>We Connect</h3>
-          <p>Our wholesale team contacts you within 24 hours to discuss pricing, products, and terms.</p>
+          <h3 data-i18n="ws_step2_title">We Connect</h3>
+          <p data-i18n="ws_step2_desc">Our wholesale team contacts you within 24 hours to discuss pricing, products, and terms.</p>
         </div>
         <div class="ws-step-arrow"><i class="fas fa-chevron-right"></i></div>
         <div class="ws-step reveal">
           <div class="ws-step-num">03</div>
           <div class="ws-step-icon"><i class="fas fa-boxes"></i></div>
-          <h3>Order &amp; Deliver</h3>
-          <p>Place your bulk order and receive genuine medicines dispatched within 24 hours with GST invoice.</p>
+          <h3 data-i18n="ws_step3_title">Order &amp; Deliver</h3>
+          <p data-i18n="ws_step3_desc">Place your bulk order and receive genuine medicines dispatched within 24 hours with GST invoice.</p>
         </div>
       </div>
     </div>
@@ -252,43 +255,43 @@
 
         <!-- Left info panel -->
         <div class="ws-form-info reveal">
-          <span class="badge-pill">Get Started</span>
-          <h2>Business Enquiry</h2>
-          <p>Ready to partner with us? Fill in your business details and our wholesale team will get back to you within <strong>24 hours</strong>.</p>
+          <span class="badge-pill" data-i18n="ws_form_card_badge">Get Started</span>
+          <h2 data-i18n="ws_form_card_title">Business Enquiry</h2>
+          <p data-i18n="ws_form_card_desc">Ready to partner with us? Fill in your business details and our wholesale team will get back to you within 24 hours.</p>
           <div class="ws-contact-list">
             <div class="ws-contact-item">
               <div class="ws-contact-icon"><i class="fas fa-phone-alt"></i></div>
               <div>
-                <div class="ws-contact-label">Wholesale Helpline</div>
+                <div class="ws-contact-label" data-i18n="ws_helpline_label">Wholesale Helpline</div>
                 <a href="tel:+919501743529">+91 9501743529</a>
               </div>
             </div>
             <div class="ws-contact-item">
               <div class="ws-contact-icon"><i class="fas fa-envelope"></i></div>
               <div>
-                <div class="ws-contact-label">Email Us</div>
+                <div class="ws-contact-label" data-i18n="qc_email_label">Email Us</div>
                 <a href="mailto:wholesale@namomedical.com">wholesale@namomedical.com</a>
               </div>
             </div>
             <div class="ws-contact-item">
               <div class="ws-contact-icon"><i class="fas fa-clock"></i></div>
               <div>
-                <div class="ws-contact-label">Response Time</div>
-                <span>Within 24 hours on business days</span>
+                <div class="ws-contact-label" data-i18n="ws_response_time">Response Time</div>
+                <span data-i18n="ws_response_val">Within 24 hours on business days</span>
               </div>
             </div>
             <div class="ws-contact-item">
               <div class="ws-contact-icon"><i class="fab fa-whatsapp"></i></div>
               <div>
-                <div class="ws-contact-label">WhatsApp</div>
-                <a href="https://wa.me/919501743529">Chat with us</a>
+                <div class="ws-contact-label" data-i18n="qc_wa_label">WhatsApp</div>
+                <a href="https://wa.me/919501743529" data-i18n="info_wa_link">Chat with us</a>
               </div>
             </div>
           </div>
           <div class="ws-trust-strip">
-            <div class="ws-trust-item"><i class="fas fa-lock"></i> Secure &amp; Confidential</div>
-            <div class="ws-trust-item"><i class="fas fa-file-invoice"></i> GST Invoicing</div>
-            <div class="ws-trust-item"><i class="fas fa-shield-halved"></i> Licensed &amp; Certified</div>
+            <div class="ws-trust-item"><i class="fas fa-lock"></i> <span data-i18n="ws_secure_text">Secure &amp; Confidential</span></div>
+            <div class="ws-trust-item"><i class="fas fa-file-invoice"></i> <span data-i18n="ws_gst_text">GST Invoicing</span></div>
+            <div class="ws-trust-item"><i class="fas fa-shield-halved"></i> <span data-i18n="ws_certified_text">Licensed &amp; Certified</span></div>
           </div>
         </div>
 
@@ -297,19 +300,19 @@
           <!-- Success Message (hidden by default) -->
           <div class="ws-success-msg" id="ws-success" style="display:none;">
             <div class="ws-success-icon"><i class="fas fa-check-circle"></i></div>
-            <h3>Enquiry Submitted!</h3>
-            <p>Thank you, our team will contact you within <strong>24 hours</strong>.</p>
+            <h3 data-i18n="ws_success_h3">Enquiry Submitted!</h3>
+            <p data-i18n="ws_success_p">Thank you, our team will contact you within 24 hours.</p>
             <p class="ws-success-sub">A confirmation has been sent to your email. For urgent queries, call us at <a href="tel:+919501743529">+91 9501743529</a>.</p>
-            <button class="ws-btn-reset" id="ws-reset-btn">Submit Another Enquiry</button>
+            <button class="ws-btn-reset" id="ws-reset-btn" data-i18n="ws_btn_reset">Submit Another Enquiry</button>
           </div>
 
           <!-- The actual form -->
           <form id="ws-enquiry-form" novalidate>
-            <h3 class="ws-form-title"><i class="fas fa-building"></i> Business Details</h3>
+            <h3 class="ws-form-title"><i class="fas fa-building"></i> <span data-i18n="ws_form_sec_title">Business Details</span></h3>
 
             <div class="ws-form-row">
               <div class="ws-field-group">
-                <label for="biz-name">Business Name <span class="req">*</span></label>
+                <label for="biz-name"><span data-i18n="ws_label_biz_name">Business Name</span> <span class="req">*</span></label>
                 <div class="ws-input-wrap">
                   <i class="fas fa-store"></i>
                   <input type="text" id="biz-name" name="biz-name" placeholder="e.g. City Pharmacy Pvt. Ltd." autocomplete="organization" />
@@ -317,7 +320,7 @@
                 <span class="ws-error" id="err-biz-name">Please enter your business name.</span>
               </div>
               <div class="ws-field-group">
-                <label for="contact-person">Contact Person <span class="req">*</span></label>
+                <label for="contact-person"><span data-i18n="ws_label_contact_person">Contact Person</span> <span class="req">*</span></label>
                 <div class="ws-input-wrap">
                   <i class="fas fa-user"></i>
                   <input type="text" id="contact-person" name="contact-person" placeholder="Full name" autocomplete="name" />
@@ -328,7 +331,7 @@
 
             <div class="ws-form-row">
               <div class="ws-field-group">
-                <label for="phone">Phone Number <span class="req">*</span></label>
+                <label for="phone"><span data-i18n="ws_label_phone">Phone Number</span> <span class="req">*</span></label>
                 <div class="ws-input-wrap">
                   <i class="fas fa-phone-alt"></i>
                   <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" />
@@ -336,7 +339,7 @@
                 <span class="ws-error" id="err-phone">Please enter a valid 10-digit phone number.</span>
               </div>
               <div class="ws-field-group">
-                <label for="email">Email Address <span class="req">*</span></label>
+                <label for="email"><span data-i18n="ws_label_email">Email Address</span> <span class="req">*</span></label>
                 <div class="ws-input-wrap">
                   <i class="fas fa-envelope"></i>
                   <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
@@ -346,7 +349,7 @@
             </div>
 
             <div class="ws-field-group">
-              <label for="gst-license">GST / Drug License Number <span class="req">*</span></label>
+              <label for="gst-license"><span data-i18n="ws_label_gst">GST / Drug License Number</span> <span class="req">*</span></label>
               <div class="ws-input-wrap">
                 <i class="fas fa-id-card"></i>
                 <input type="text" id="gst-license" name="gst-license" placeholder="GST No. or Drug License No." />
@@ -355,7 +358,7 @@
             </div>
 
             <div class="ws-field-group">
-              <label for="products-interested">Products Interested In <span class="req">*</span></label>
+              <label for="products-interested"><span data-i18n="ws_label_products">Products Interested In</span> <span class="req">*</span></label>
               <div class="ws-textarea-wrap">
                 <i class="fas fa-list-ul"></i>
                 <textarea id="products-interested" name="products-interested" rows="4"
@@ -365,14 +368,14 @@
             </div>
 
             <div class="ws-field-group">
-              <label for="order-volume">Estimated Monthly Order Volume <span class="req">*</span></label>
+              <label for="order-volume"><span data-i18n="ws_label_volume">Estimated Monthly Order Volume</span> <span class="req">*</span></label>
               <div class="ws-input-wrap ws-select-wrap">
                 <i class="fas fa-boxes"></i>
                 <select id="order-volume" name="order-volume">
-                  <option value="">â€” Select Volume â€”</option>
-                  <option value="small">Small (Up to â‚¹50,000 / month)</option>
-                  <option value="medium">Medium (â‚¹50,000 â€“ â‚¹2,00,000 / month)</option>
-                  <option value="large">Large (â‚¹2,00,000+ / month)</option>
+                  <option value="" data-i18n="ws_vol_select">— Select Volume —</option>
+                  <option value="small" data-i18n="ws_vol_small">Small (Up to ₹50,000 / month)</option>
+                  <option value="medium" data-i18n="ws_vol_medium">Medium (₹50,000 – ₹2,00,000 / month)</option>
+                  <option value="large" data-i18n="ws_vol_large">Large (₹2,00,000+ / month)</option>
                 </select>
                 <i class="fas fa-chevron-down ws-select-arrow"></i>
               </div>
@@ -382,7 +385,7 @@
             <div class="ws-field-group ws-checkbox-group">
               <label class="ws-checkbox-label">
                 <input type="checkbox" id="ws-agree" name="ws-agree" />
-                <span>I confirm this is a genuine business enquiry and agree to be contacted by the Namo Medical wholesale team.</span>
+                <span data-i18n="ws_agree_confirm">I confirm this is a genuine business enquiry and agree to be contacted by the Namo Medical wholesale team.</span>
               </label>
               <span class="ws-error" id="err-ws-agree">Please confirm before submitting.</span>
             </div>
@@ -390,7 +393,7 @@
             <p class="form-submit-error" id="ws-submit-error" role="alert" style="display:none;"></p>
 
             <button type="submit" class="ws-submit-btn" id="ws-submit-btn">
-              <i class="fas fa-paper-plane"></i> Submit Enquiry
+              <i class="fas fa-paper-plane"></i> <span data-i18n="ws_btn_submit">Submit Enquiry</span>
               <span class="ws-btn-spinner" id="ws-spinner" style="display:none;"><i class="fas fa-circle-notch fa-spin"></i></span>
             </button>
           </form>
@@ -406,51 +409,51 @@
       <div class="footer-grid">
 
         <div class="footer-brand">
-          <div class="logo">
+          <a href="index.html" class="logo">
             <div class="logo-icon"><i class="fas fa-plus-square"></i></div>
             <div class="logo-text">
-              <div class="name">Namo Medical</div>
-              <div class="tagline">Your Health, Our Priority</div>
+              <div class="name" data-i18n="logo_name">Namo Medical</div>
+              <div class="tagline" data-i18n="logo_tagline">Your Health, Our Priority</div>
             </div>
-          </div>
-          <p class="footer-desc">Serving the community with genuine medicines and healthcare products since 2009. Your trusted partner for retail and wholesale pharmaceutical needs.</p>
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">Serving the community with genuine medicines and healthcare products since 2009. Your trusted partner for retail and wholesale pharmaceutical needs.</p>
           <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="javascript:void(0)" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="javascript:void(0)" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://wa.me/919501743529" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="javascript:void(0)" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
 
         <div class="footer-col">
-          <h4>Quick Links</h4>
+          <h4 data-i18n="footer_quick_links">Quick Links</h4>
           <ul class="footer-links">
-            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Products</a></li>
-            <li><a href="wholesale.html"><i class="fas fa-chevron-right"></i> Wholesale</a></li>
-            <li><a href="prescription.html"><i class="fas fa-chevron-right"></i> Prescription Upload</a></li>
-            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> Health Tips</a></li>
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_home">Home</span></a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_about">About Us</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_products">Products</span></a></li>
+            <li><a href="wholesale.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_wholesale">Wholesale</span></a></li>
+            <li><a href="prescription.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_prescription_upload">Prescription Upload</span></a></li>
+            <li><a href="health-tips.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_health_tips">Health Tips</span></a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Categories</h4>
+          <h4 data-i18n="footer_categories">Categories</h4>
           <ul class="footer-links">
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Medicines</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Health Devices</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> First Aid</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Baby Care</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Personal Care</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Surgical Items</a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_medicines">Medicines</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_devices">Health Devices</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_first_aid">First Aid</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_baby_care">Baby Care</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_personal_care">Personal Care</span></a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="cat_surgical">Surgical Items</span></a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Contact Us</h4>
+          <h4 data-i18n="footer_contact">Contact Us</h4>
           <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span>Pritam Colony,<br />Fatehgarh Sahib, Punjab,<br />India</span>
+            <span data-i18n="info_address_val">Pritam Colony,<br />Fatehgarh Sahib, Punjab,<br />India</span>
           </div>
           <div class="contact-item">
             <i class="fas fa-phone-alt"></i>
@@ -462,19 +465,20 @@
           </div>
           <div class="contact-item">
             <i class="fas fa-clock"></i>
-            <span>Mon–Sun: 9:30 AM – 8:30 PM</span>
+            <span data-i18n="top_bar_timing">Mon–Sun: 9:30 AM – 8:30 PM</span>
           </div>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2025 Namo Medical Store. All rights reserved.</span>
-        <span>Designed with <i class="fas fa-heart" style="color:#f43f5e;"></i> for better health</span>
+        <span data-i18n="footer_rights">&copy; 2025 Namo Medical Store. All rights reserved.</span>
+        <span><span data-i18n="footer_designed">Designed for better health</span> <i class="fas fa-heart" style="color:#f43f5e;"></i></span>
       </div>
     </div>
   </footer>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
   <script type="module" src="js/wholesale.js"></script>
