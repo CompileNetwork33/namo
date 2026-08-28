@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Namo Medical Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+  <!-- FontAwesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body class="admin-dashboard-body">
+
+  <!-- Toast Notification Container -->
+  <div id="admin-toast-container" class="admin-toast-container"></div>
+
+  <!-- Header -->
+  <header class="admin-header">
+    <div class="admin-header-container">
+      <div class="admin-brand">
+        <a href="admin-dashboard.html" class="logo">
+          <div class="logo-icon"><i class="fas fa-plus-square"></i></div>
+          <div class="logo-text">
+            <div class="name">Namo Medical</div>
+            <div class="tagline">Admin Control Panel</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="admin-header-user">
+        <div class="user-chip">
+          <i class="fas fa-user-circle"></i>
+          <span id="admin-user-email">Loading...</span>
+        </div>
+        <button id="admin-logout-btn" class="admin-btn admin-btn-outline admin-btn-sm">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="admin-main">
+    <div class="admin-container">
+
+      <!-- Summary Stats Row -->
+      <div class="admin-stats-grid">
+        <div class="admin-stat-card">
+          <div class="stat-icon stat-icon--teal"><i class="fas fa-file-medical"></i></div>
+          <div class="stat-info">
+            <span class="stat-value" id="stat-total-rx">0</span>
+            <span class="stat-label">Prescription Orders</span>
+          </div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div class="stat-icon stat-icon--amber"><i class="fas fa-clock"></i></div>
+          <div class="stat-info">
+            <span class="stat-value" id="stat-pending-rx">0</span>
+            <span class="stat-label">Pending Orders</span>
+          </div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div class="stat-icon stat-icon--blue"><i class="fas fa-envelope"></i></div>
+          <div class="stat-info">
+            <span class="stat-value" id="stat-total-contact">0</span>
+            <span class="stat-label">Contact Messages</span>
+          </div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div class="stat-icon stat-icon--indigo"><i class="fas fa-boxes"></i></div>
+          <div class="stat-info">
+            <span class="stat-value" id="stat-total-ws">0</span>
+            <span class="stat-label">Wholesale Enquiries</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Search Strip -->
+      <div class="admin-toolbar">
+        <!-- Tabs -->
+        <div class="admin-tabs" role="tablist">
+          <button class="admin-tab-btn active" data-tab="tab-prescriptions" id="btn-tab-rx" role="tab" aria-selected="true">
+            <i class="fas fa-file-medical"></i> Prescriptions
+            <span class="tab-badge" id="badge-rx-count">0</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="tab-contacts" id="btn-tab-contact" role="tab" aria-selected="false">
+            <i class="fas fa-envelope"></i> Contact Messages
+            <span class="tab-badge" id="badge-contact-count">0</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="tab-wholesale" id="btn-tab-ws" role="tab" aria-selected="false">
+            <i class="fas fa-boxes"></i> Wholesale Enquiries
+            <span class="tab-badge" id="badge-ws-count">0</span>
+          </button>
+        </div>
+
+        <!-- Search & Refresh -->
+        <div class="admin-toolbar-right">
+          <div class="admin-search-box">
+            <i class="fas fa-search"></i>
+            <input type="search" id="admin-search-input" placeholder="Search orders, names, phone…" />
+          </div>
+          <button id="admin-refresh-btn" class="admin-btn admin-btn-icon" title="Refresh Data">
+            <i class="fas fa-sync-alt"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 1: PRESCRIPTION ORDERS -->
+      <div class="admin-tab-content active" id="tab-prescriptions" role="tabpanel">
+        <div class="admin-table-card">
+          <div class="table-header">
+            <h2><i class="fas fa-file-medical"></i> Prescription Orders</h2>
+            <span class="table-subtitle">Orders submitted by retail customers requiring doctor prescriptions</span>
+          </div>
+
+          <div class="admin-table-responsive">
+            <table class="admin-table" id="table-rx">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Customer Name</th>
+                  <th>Contact Info</th>
+                  <th>Delivery Address</th>
+                  <th>Notes</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-rx">
+                <tr>
+                  <td colspan="7" class="table-loading">
+                    <i class="fas fa-circle-notch fa-spin"></i> Loading prescription orders…
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: CONTACT MESSAGES -->
+      <div class="admin-tab-content" id="tab-contacts" role="tabpanel">
+        <div class="admin-table-card">
+          <div class="table-header">
+            <h2><i class="fas fa-envelope"></i> Contact Messages</h2>
+            <span class="table-subtitle">General enquiries submitted from the contact form</span>
+          </div>
+
+          <div class="admin-table-responsive">
+            <table class="admin-table" id="table-contacts">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Sender Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Message</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-contacts">
+                <tr>
+                  <td colspan="6" class="table-loading">
+                    <i class="fas fa-circle-notch fa-spin"></i> Loading contact messages…
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: WHOLESALE ENQUIRIES -->
+      <div class="admin-tab-content" id="tab-wholesale" role="tabpanel">
+        <div class="admin-table-card">
+          <div class="table-header">
+            <h2><i class="fas fa-boxes"></i> Wholesale Enquiries</h2>
+            <span class="table-subtitle">Bulk supply and business partnership requests</span>
+          </div>
+
+          <div class="admin-table-responsive">
+            <table class="admin-table" id="table-wholesale">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Business Name</th>
+                  <th>Contact Person</th>
+                  <th>Phone & Email</th>
+                  <th>GST / Drug Lic No.</th>
+                  <th>Products Interested</th>
+                  <th>Order Volume</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-wholesale">
+                <tr>
+                  <td colspan="8" class="table-loading">
+                    <i class="fas fa-circle-notch fa-spin"></i> Loading wholesale enquiries…
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script type="module" src="js/admin-dashboard.js"></script>
+</body>
+</html>

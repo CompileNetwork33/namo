@@ -1,10 +1,11 @@
 // =============================================
 // NAMO MEDICAL STORE - Firebase Configuration
-// Firestore only — no Firebase Storage (avoids billing).
+// Firestore & Firebase Authentication
 // =============================================
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { getAuth } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics, isSupported } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 
 const firebaseConfig = {
@@ -19,6 +20,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
 // Analytics only when supported (browser + HTTPS / localhost)
 isSupported()
@@ -29,4 +31,5 @@ isSupported()
     /* Analytics unavailable — ignore */
   });
 
-export { app, db };
+export { app, db, auth };
+
